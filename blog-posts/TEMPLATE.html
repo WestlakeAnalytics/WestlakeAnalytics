@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="page-sub">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Required: used by scripts/build-blog-index.mjs to sort and list posts -->
+    <meta name="wa:blog-title" content="Your post title here" />
+    <meta name="wa:blog-date" content="2026-05-01" />
+    <!-- Optional: card thumbnail on blog.html and homepage (path from site root) -->
+    <meta name="wa:blog-thumb" content="blog-posts/images/blogXXX/thumb.png" />
+    <title>Your post title here · Westlake Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-sub">
+    <header class="site-banner" id="site-banner" aria-label="Site">
+      <div class="site-banner__inner">
+        <div class="site-banner__center">
+          <a class="logo-title" href="../index.html">
+            <img
+              class="logo-title__mark"
+              src="../WestlakeAnalytics%20Logo.svg"
+              alt=""
+              width="48"
+              height="48"
+              decoding="async"
+              draggable="false"
+              aria-hidden="true"
+            />
+            <span class="logo-title__text">Westlake Analytics</span>
+          </a>
+        </div>
+        <nav class="site-banner__nav" aria-label="Primary">
+          <ul>
+            <li><a class="nav-pill nav-pill--current" href="../blog.html" aria-current="page">Blog</a></li>
+            <li><a class="nav-pill" href="../viz-help.html">1-1 Viz Help</a></li>
+            <li><a class="nav-pill" href="../about.html">About</a></li>
+            <li><a class="nav-pill" href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-shell">
+      <main class="page-main" id="main">
+        <div class="page-main__inner">
+          <p class="blog-post-meta"><a href="../blog.html">← Back to blog</a> · 1 May 2026</p>
+          <h1 class="section-display-title">Your post title here</h1>
+
+          <!-- Write your post inside this article. Delete this comment block when done. -->
+          <article class="blog-post-body page-prose">
+            <p>Opening paragraph. Keep the tone conversational — same as your existing posts.</p>
+
+            <figure class="blog-post-figure">
+              <img
+                src="../blog-posts/images/blogXXX/01.png"
+                alt="Describe the image for screen readers"
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+
+            <p>
+              Link to another post on this site:
+              <a href="blog022.html">The Journey to Visionary</a> (use the target file name, no path).
+            </p>
+            <p>
+              External link:
+              <a href="https://public.tableau.com/" target="_blank" rel="noopener noreferrer">Tableau Public</a>.
+            </p>
+
+            <p><strong>Section heading as bold</strong></p>
+            <p>Closing paragraph. Sign off if you like — <strong>//</strong> Chris</p>
+          </article>
+        </div>
+      </main>
+
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <a class="site-footer__logo" href="../index.html" aria-label="Westlake Analytics home">
+            <img
+              class="site-footer__logo-mark"
+              src="../WestlakeAnalytics%20Logo.svg"
+              alt=""
+              width="112"
+              height="112"
+              decoding="async"
+              draggable="false"
+              aria-hidden="true"
+            />
+          </a>
+          <p class="site-footer__text">Chris Westlake | Edinburgh, UK</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

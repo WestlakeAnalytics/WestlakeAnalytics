@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="page-sub">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Quick Tip | Dynamic Annotations · Westlake Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-sub">
+    <header class="site-banner" id="site-banner" aria-label="Site">
+      <div class="site-banner__inner">
+        <div class="site-banner__center">
+          <a class="logo-title" href="../index.html">
+            <img class="logo-title__mark" src="../WestlakeAnalytics%20Logo.svg" alt="" width="48" height="48" decoding="async" draggable="false" aria-hidden="true" />
+            <span class="logo-title__text">Westlake Analytics</span>
+          </a>
+        </div>
+        <nav class="site-banner__nav" aria-label="Primary">
+          <ul>
+            <li><a class="nav-pill nav-pill--current" href="../blog.html" aria-current="page">Blog</a></li>
+            <li><a class="nav-pill" href="../viz-help.html">1-1 Viz Help</a></li>
+            <li><a class="nav-pill" href="../about.html">About</a></li>
+            <li><a class="nav-pill" href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="page-shell">
+      <main class="page-main" id="main">
+        <div class="page-main__inner">
+          <p class="blog-post-meta"><a href="../blog.html">← Back to blog</a> · 05/12/2024</p>
+          <h1 class="section-display-title">A Quick Tip | Dynamic Annotations</h1>
+          <article class="blog-post-body page-prose"><p class="" style="white-space:pre-wrap;">Last month, I had the joy of attending DataFam Europe, Tableau’s first conference offering in Europe since 2019. The event saw over 600 people come together for an amazing 2 days of content. It was fantastic to see so many people in person and have this opportunity to connect with old friends and make new ones.</p><p class="" style="white-space:pre-wrap;">The conference began with a keynote by <a href="https://www.nathalienahai.com/" target="_blank">Nathalie Nahai</a>. She shared insights on the psychology of AI, exploring the good and potential bad new technology. There are huge benefits that AI presents to us as individuals and society, but there could also be drawbacks if we take this too far. The Tableau keynote on day 2 was also brilliant, and it’s exciting to see what is in store for Tableau users in the coming months. <a href="https://www.tableau.com/en-gb/tableau-agent" target="_blank">Tableau Agent</a> was a big focus. It gives users a way to query data and have the software build visualisations for you. Simply ask it a question of your data, and up will pop a suggested viz. The possibilities are endless!</p><p class="" style="white-space:pre-wrap;">As with every Tableau conference, there were a lot of very valuable breakout sessions to attend. Highlights for me included <a href="https://www.linkedin.com/in/rmdleon/" target="_blank">Rosa Mariana de León-Escribano</a> talking about templates, <a href="https://www.linkedin.com/in/arya-shreya/" target="_blank">Shreya Arya</a> speaking on the benefits of wireframing, and <a href="https://www.linkedin.com/in/ladataviz/" target="_blank">Tristan Guillevin</a> releasing a <a href="https://www.ladataviz.com/tools/filter-manager" target="_blank">new tool</a> to enable you to format all your filters at once. What really stood out was the emphasis on the community. Some 70% of sessions were run by community members which really demonstrates that the strength of Tableau lies with us, the people that love the tool.</p><p class="" style="white-space:pre-wrap;">Another highlight of the whole event was the “DataFam Slam” tip battle that saw 5 of Tableau employees take on 5 members of the DataFam to see which team could offer the best tips. Each participant was given 2 and a half minutes to share their tip, and the audience vote for their favourite. All the tips were excellent, but ultimately Team DataFam took the win.</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog014/01.jfif" alt="" width="2048" height="1536" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">I want to share with you here a more detailed version of the tip I shared in this session. There was a lot to cover in those 2 and a half minutes, and I thought giving a deeper breakdown would be useful for people who found it interesting (and all of you that weren’t there!). The tip enables your users to show or hide annotations as they wish so that they can see the information provided or hide it if it isn’t applicable to them.</p><p class="" style="white-space:pre-wrap;"><strong>The On-Stage Example</strong></p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog014/02.gif" alt="" width="394" height="394" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;"><strong>How to…</strong></p><p class="" style="white-space:pre-wrap;">We begin by creating the parameter. This is a simple string parameter with 2 options: show or hide.</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog014/03.png" alt="" width="574" height="671" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">From this we can create the first of our calculated fields. This will replace one of the axes in our view and make the axis change as we change the parameter. In this, when we are showing the annotations, we use the metric as standard. For the case when we aren’t showing the annotations we simply add a really big number to the metric. In this example, the data will only ever be between 0 and 10, so I’ve added 100. You can adjust the number to add based on your data. </p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>CASE [Annotation Parameter]</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>WHEN 'Show' THEN [IMDb Series Rating]</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>WHEN 'Hide' THEN [IMDb Series Rating] + 100</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>END</em></p><p class="" style="white-space:pre-wrap;">If we add this to the view, we can start to see it taking shape but we aren’t done just yet. When the parameter is set to show annotations, we see the chart displays as expected. However, if we change it to hide the annotations, all our data points bunch up to the right and the annotation is still visible.</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog014/04.png" alt="" width="1366" height="944" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">To fix this, we need the relative range of our axis to not change. It should always go from 0 to 10, or 100 to 110. Start by editing the axis and deselecting “show zero”. This seems to work. We can now successfully show and hide the annotation without the data points moving on the screen. There is still an issue here though. Our axis actually only goes from the smallest value to the largest value, not 0 to 10. </p><p class="" style="white-space:pre-wrap;">There are a few ways that you can fix this, but I think the easiest is through reference lines. When you have reference lines in a view, the axis will always extend to include these lines (unless your axis is fixed). This is where our other two calculations come in. </p><p class="" style="white-space:pre-wrap;">We need one calculation for the minimum axis value. In this (and most other cases) this will be 0. We can duplicate our original axis calculation, and change any reference to the metric to be 0. The process is similar for the maximum. </p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>CASE [Annotation Parameter]</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>WHEN 'Show' THEN 0</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>WHEN 'Hide' THEN 0 + 100</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>END</em></p><p class="" style="white-space:pre-wrap;">Duplicate the calculation and change any reference to the metric to be your highest value – in this case it’s 10. The best part of this is that you don’t have to hardcode these values. You can use a max calculation so that it can adapt as your data changes. </p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>CASE [Annotation Parameter]</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>WHEN 'Show' THEN 0</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>WHEN 'Hide' THEN 0 + 100</em></p><p style="margin-left:40px;white-space:pre-wrap;" class=""><em>END</em></p><p class="" style="white-space:pre-wrap;">Take these two calculations and add them to detail in the sheet’s marks pane. Then, right click on your axis and select “Add reference line”. We are going to make this a reference band so that we can include both limits in one step. Make your minimum value calculation to be the start of the band, and the maximum value calculation to be the end of the band. You can add a label if you wish, and change the formatting of the line to fit your style. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog014/05.png" alt="" width="482" height="556" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">As a final step, hide the tick marks on your actual axis. These give away the trick that we have used as the values will be between 100 and 110 when the annotations are hidden which is very misleading. You can also add additional reference lines to act as gridlines if you wish to.</p><p class="" style="white-space:pre-wrap;"><strong>Another Example</strong></p><p class="" style="white-space:pre-wrap;">I first used this trick in my <a href="https://public.tableau.com/app/profile/westlake.cjw/viz/LoveForFoodHungerForChange/LoveForFoodHungerForChange" target="_blank">“Love for Food, Hunger for Change”</a> visualisation from last year’s IronViz qualifier round. The dashboard looks at the issue of undernourishment around the world. In the second section of the dashboard, I explored three ways that we can end undernourishment: education, gender equality, and climate change. An index is used for each of these, and I wanted to give people the ability to see the data of the individual aspects that make up each index. I also wanted to add annotations to each of these to provide an analysis at each step of the way. Without the tip I have shared here, this would have required 17 sheets. Having that many sheets will hamper the performance of any dashboard, as well as making it more complicated to build and harder to maintain.</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog014/06.gif" alt="" width="426" height="426" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;"><strong>//</strong></p><p class="" style="white-space:pre-wrap;">I hope you enjoyed this tip, and can’t wait to see how you use it to make your annotations more effective. Annotations are brilliant, and so often underused. I think that making them dynamic you can improve their usefulness and applicability within your work.</p><p class="" style="white-space:pre-wrap;">Take care <strong>//</strong> Chris</p></article>
+        </div>
+      </main>
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <a class="site-footer__logo" href="../index.html" aria-label="Westlake Analytics home">
+            <img class="site-footer__logo-mark" src="../WestlakeAnalytics%20Logo.svg" alt="" width="112" height="112" decoding="async" draggable="false" aria-hidden="true" />
+          </a>
+          <p class="site-footer__text">Chris Westlake | Edinburgh, UK</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

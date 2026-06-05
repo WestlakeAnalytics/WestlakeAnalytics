@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="page-sub">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Behind the Viz | Pick Your Lions · Westlake Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-sub">
+    <header class="site-banner" id="site-banner" aria-label="Site">
+      <div class="site-banner__inner">
+        <div class="site-banner__center">
+          <a class="logo-title" href="../index.html">
+            <img class="logo-title__mark" src="../WestlakeAnalytics%20Logo.svg" alt="" width="48" height="48" decoding="async" draggable="false" aria-hidden="true" />
+            <span class="logo-title__text">Westlake Analytics</span>
+          </a>
+        </div>
+        <nav class="site-banner__nav" aria-label="Primary">
+          <ul>
+            <li><a class="nav-pill nav-pill--current" href="../blog.html" aria-current="page">Blog</a></li>
+            <li><a class="nav-pill" href="../viz-help.html">1-1 Viz Help</a></li>
+            <li><a class="nav-pill" href="../about.html">About</a></li>
+            <li><a class="nav-pill" href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="page-shell">
+      <main class="page-main" id="main">
+        <div class="page-main__inner">
+          <p class="blog-post-meta"><a href="../blog.html">← Back to blog</a> · 18/09/2025</p>
+          <h1 class="section-display-title">Behind the Viz | Pick Your Lions</h1>
+          <article class="blog-post-body page-prose"><p class="" style="white-space:pre-wrap;">This post has been a long time coming. I published the viz in May, and promised a blog diving into how it works at the end of July. Since then, I have been taking a break over the summer to spend time with my family. We welcomed our first child into the world in mid-July, and it has been a real blessing to be able to spend the summer focussing on how to operate as a family of three. The past 10 weeks have been truly special.</p><p class="" style="white-space:pre-wrap;">The viz in question is <a href="https://public.tableau.com/app/profile/westlake.cjw/viz/PickyourLions/PickyourLions" target="_blank">Pick Your Lions</a>. It looks at the squad from the 2025 British and Irish Lions tour of Australia and allows you to select your favourite players to make up a test team. The viz includes key metrics about each player from the 2024/25 season up to the time of selection. There are also thumbnail images of each player which were created using ChatGPT and the help of my rugby vizzing buddy, <a href="https://public.tableau.com/app/profile/rob.taylor6175/vizzes" target="_blank">Rob Taylor</a>. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/01.gif" alt="" width="864" height="864" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">The technical build included a lot of Tableau features stacked on top of each other. Map Layers, Dynamic Zone Visability, and plenty of Dashboard Actions. I always enjoy building something that focuses around data that I am interested in, while using my favourite features from a product that I love. In trying to unpack this viz, I’ll approach each of these in turn. This is not intended to be a “how to” blog, but rather intends to unpack the features used to create this viz. I’ll include in each section links to posts that I found helpful when learning to use these features myself.</p><p class="" style="white-space:pre-wrap;"><strong>Map Layers</strong></p><p class="" style="white-space:pre-wrap;"><em>My favourite getting started article: </em><a href="https://www.biztory.com/blog/tableau-map-layers-getting-started-1/3" target="_blank"><em>“Tableau Map Layers: Getting Started” by Sam Parsons</em></a></p><p class="" style="white-space:pre-wrap;">The use of map layers is something that I have focussed a lot on in previous blog posts, and I am definitely not the first to use them in this way – to create a sort of KPI card that includes many data points within the same sheet. You’ll find this in the player metric cards in this viz. </p><p class="" style="white-space:pre-wrap;">The beauty of map layers is that it gives us the power to turn a Tableau worksheet into a canvas needing coordinates to plot data points. By then playing around with the axes ranges you can create clean cards displaying the desired data. Below is each calculation that was used. Click the images and hover on them to see the calculations and how the layers stack together to create the final view.</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/02.png" alt="Layer 1 : Player info" loading="lazy" decoding="async" /></figure>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/03.png" alt="Layer 2 : Metric Labels" loading="lazy" decoding="async" /></figure>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/04.png" alt="Layer 3 : Metric Dots" loading="lazy" decoding="async" /></figure>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/05.png" alt="Layer 4 : Country Bar" loading="lazy" decoding="async" /></figure>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/06.png" alt="Layer 5 : Add to Team" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;"><strong>Dynamic Zone Visibility</strong></p><p class="" style="white-space:pre-wrap;"><em>My favourite getting started article: </em><a href="https://cj-mayes.com/2023/08/03/using-booleans-dynamic-zone-visibility-for-beginners/" target="_blank"><em>“Using Booleans (Dynamic Zone Visibility for Beginners)” by CJ Mayes</em></a></p><p class="" style="white-space:pre-wrap;">Another feature that my blog has looked at extensively in the past, and I know I am not the only person to have tried to write “how to” articles on this, so this will also be brief! </p><p class="" style="white-space:pre-wrap;">Dynamic Zone Visibility allows you to control the appearance of sheets on your final dashboard using Boolean parameters or fields. It is in many ways the next logical step from show/hide or navigation buttons that we learnt to love from many versions of Tableau ago. Previously this viz would have needed to be built across at least 2 dashboards, and would have been nowhere near as user friendly. </p><p class="" style="white-space:pre-wrap;">I have implemented dynamic zones on one container in this viz that means that when you select a player shirt on the home page, it opens up a new container over the top that has all the player information in. This can then be closed again to revert to the home page. The container has a visibility control parameter<strong><em> </em></strong>set such that if the value of the parameter is “true” the view will be shown; if it is “false” the view will be closed. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/07.png" alt="" width="1628" height="943" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">There are multiple parameter actions that control the value of this. When selecting a shirt on the home page the parameter is toggled to TRUE. Conversely, when the “Return to Pitch” button is selected, it toggles the parameter back to FALSE.</p><p class="" style="white-space:pre-wrap;"><strong>Dashboard Actions</strong></p><p class="" style="white-space:pre-wrap;"><em>My favourite getting started guide: OK, for this I’m struggling a little, but </em><a href="https://help.tableau.com/current/pro/desktop/en-us/actions_dashboards.htm" target="_blank"><em>this guide from Tableau</em></a><em> is great, and so is </em><a href="https://www.flerlagetwins.com/2019/05/playing-with-parameter-actions-tableau_18.html" target="_blank"><em>this from Ken and Kevin Flerlage</em></a></p><p class="" style="white-space:pre-wrap;">As you may have noticed by my straying into it already, dashboard actions are a huge part of this dashboard, and where the real power of this visualisation lies. There are 54 dashboard actions – 50 parameter actions, and 4 filter actions.</p><p class="" style="white-space:pre-wrap;">There is one parameter for each shirt on the pitch (15 parameters). There is also an additional parameter to keep track of which shirt number we are filling next, and another to show which position group this relates to. All parameters are string parameters and allow any value. Each of these parameters are controlled by a series of actions for different purposes. The way these actions work means that only the values we want to be present in the parameters can be, negating the need for a hardcoded list. On to the actions themselves…</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/08.png" alt="" width="506" height="487" loading="lazy" decoding="async" /></figure>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/09.png" alt="" width="509" height="491" loading="lazy" decoding="async" /></figure>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/10.png" alt="" width="507" height="490" loading="lazy" decoding="async" /></figure>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog019/11.png" alt="" width="510" height="490" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;"><strong>Follow on Selections – 1 parameter actions</strong></p><p style="margin-left:40px;white-space:pre-wrap;" class="">Another subtle feature I included to improve the user experience was to automatically move to the next position after making a selection. This reduces the number of clicks needed, and is done by adding 1 to the value of the selected shirt parameter, and updating the position parameter as required.</p><p class="" style="white-space:pre-wrap;"><strong>Dynamic Zone Visibility - 1 parameter actions</strong></p><p style="margin-left:40px;white-space:pre-wrap;" class="">The final parameter action is the one we mentioned earlier that uses dynamic zone visibility to show or hide the player cards as required.</p><p class="" style="white-space:pre-wrap;"><strong>Remove highlight on clicks - 4 filter actions</strong></p><p style="margin-left:40px;white-space:pre-wrap;" class="">The remaining 4 actions are filter actions that remove the highlight that Tableau applies when you select a mark. This is a slight hack that I often use in building dashboards because it provides a smoother user experience and makes the finished article feel more polished. You can read about the process and other ways for achieving the same thing in <a href="https://domoorewithdata.com/2022/03/02/it-depends-methods-for-removing-highlighting-in-tableau/" target="_blank">this blog by Brian Moore</a>.</p><p class="" style="white-space:pre-wrap;"><strong>//</strong></p><p class="" style="white-space:pre-wrap;">This viz is a bit of fun, using data that I enjoy in order to demonstrate the power of Tableau. Its applications are very far reaching, and the individual techniques used make it useful in a variety of settings. In my dashboard builds at work I frequently use the three features that we have focussed on here. They allow complex things to be done in simpler ways. Fewer sheets are easier to document and maintain than having workbooks where each change needs to be traced through a myriad of sheets. This makes it far easier to handover work to colleagues whenever you need to. This made my break to spend time with my newborn son all the more straightforward, and when I return to work I am hopeful these techniques will make that a simple process too! </p><p class="" style="white-space:pre-wrap;">In summary, map layers, dynamic zone visibility, and dashboard actions are the best; and spending time with your family whenever you can is the best too. I am learning fast that days with a newborn are precious and will lead to memories that will last a lifetime.</p><p class="" style="white-space:pre-wrap;">Take care <strong>// </strong>Chris</p></article>
+        </div>
+      </main>
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <a class="site-footer__logo" href="../index.html" aria-label="Westlake Analytics home">
+            <img class="site-footer__logo-mark" src="../WestlakeAnalytics%20Logo.svg" alt="" width="112" height="112" decoding="async" draggable="false" aria-hidden="true" />
+          </a>
+          <p class="site-footer__text">Chris Westlake | Edinburgh, UK</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

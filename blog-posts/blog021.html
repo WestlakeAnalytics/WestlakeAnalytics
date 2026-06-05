@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="page-sub">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify Data Stories · Westlake Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-sub">
+    <header class="site-banner" id="site-banner" aria-label="Site">
+      <div class="site-banner__inner">
+        <div class="site-banner__center">
+          <a class="logo-title" href="../index.html">
+            <img class="logo-title__mark" src="../WestlakeAnalytics%20Logo.svg" alt="" width="48" height="48" decoding="async" draggable="false" aria-hidden="true" />
+            <span class="logo-title__text">Westlake Analytics</span>
+          </a>
+        </div>
+        <nav class="site-banner__nav" aria-label="Primary">
+          <ul>
+            <li><a class="nav-pill nav-pill--current" href="../blog.html" aria-current="page">Blog</a></li>
+            <li><a class="nav-pill" href="../viz-help.html">1-1 Viz Help</a></li>
+            <li><a class="nav-pill" href="../about.html">About</a></li>
+            <li><a class="nav-pill" href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="page-shell">
+      <main class="page-main" id="main">
+        <div class="page-main__inner">
+          <p class="blog-post-meta"><a href="../blog.html">← Back to blog</a> · 26/02/2026</p>
+          <h1 class="section-display-title">Spotify Data Stories</h1>
+          <article class="blog-post-body page-prose"><p class="" style="white-space:pre-wrap;">Having the option to work from home is one of the things I like most about my job. No commute. No need to think about packing lunch. No worrying about whether my mug will still be available when I get into the office. It does have its drawbacks though. The general hubbub of an office can be a very calming thing, and I always find that I concentrate better with some general background noise. My wife does not work from home, so things can get starkly quiet for large chunks of my day. To bring that background noise, I often turn to music (mostly instrumental). It helps me concentrate, and is a driving force on the occasions when I manage to hyperfocus and churn out a fully operational dashboard in under a day. </p><p class="" style="white-space:pre-wrap;">Lately things have been a little bit different, however. Followers of the blog will know that last year we welcomed our first child into the world. Naturally, everything changed. I decided to download my streaming data from Spotify to see how noticeable the change had been in this one (what I consider to be a minor) part of my life. </p><p class="" style="white-space:pre-wrap;">The result was <a href="https://public.tableau.com/app/profile/westlake.cjw/viz/Spotify_17709143957170/CorporateCalmParentalPandemonium" target="_blank">this visualisation</a>. There is nothing particularly complex here, and this is not a how-to blog. Rather I want to share some of my thought process while creating this. The main aim for me was to let the data tell a story with minimal comments or interactivity needed. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/01.png" alt="" width="602" height="338" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;"><strong>Getting the Data</strong></p><p class="" style="white-space:pre-wrap;">Spotify allow you to request and download all of your streaming history for the past year. It is very easy to request the data, and takes about a week for it to arrive. You can also get access to your streaming history for the lifetime of your account, but this option took a little longer than I was willing to wait (30 days).</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/02.png" alt="" width="389" height="428" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">After waiting patiently for a few days, the data arrived as a zip folder containing 16 json files. I was only really interested in 2 of these – my music and podcast streaming history. I pulled these into Alteryx (though any data preparation tool will work here), and did some basic transformations to shape the data how I wanted it. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/03.png" alt="" width="602" height="191" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">The output was one file containing a row for every time I listened to something. It shows what I listened to, and how long for. The above snippet shows that I listened to a Things People Do podcast in 4 chunks over a couple of days. With this data, I was ready to pull it into Tableau and begin visualising. </p><p class="" style="white-space:pre-wrap;"><strong>Visualising the Data</strong></p><p class="" style="white-space:pre-wrap;">I had a good idea of the story that I wanted to tell from the outset. My listening time used to be very orderly. My son was born and it went a little crazy as I would sit listening to podcasts in the early hours of the morning because he wouldn’t sleep unless someone was holding him. Things settled down as he got a little bit older, but my listening habits haven’t fully returned to their pre-child state. </p><p class="" style="white-space:pre-wrap;">In Tableau I put Day onto Columns and Hour onto Rows. Set both to be continuous fields and sized the resulting dots by amount of time listened. Immediately, I could see that story start to jump off the page. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/04.png" alt="" width="602" height="359" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">Colour is a really powerful tool in data viz, and this blue wasn’t working for me at all. Using colours to help bind your work to an association people already have can be very useful. I put the time listened field onto colour as well as size, and used the green from Spotify’s logo as the end point for a sequential colour palette. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/05.png" alt="" width="602" height="358" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">My focus turned to tooltips next. Never keep default tooltips in a Tableau dashboard. Customising them allows you to add information that can really elevate your visualisation and support the story that you are trying to tell. I used a calculated field (the only one in this project) to create a string value with the time in a more readable format than number of milliseconds (what even is a millisecond anyway?). </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/06.png" alt="" width="602" height="359" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">This was one point where I noticed a bit of a strange thing with the data. Time stamps are always when streaming ended which in some cases led to some interesting (and impressive) listening times. If I listened to a podcast that lasted over an hour in one go, it would show all that time in one hour. The result is several points in this chart that suggest I listened to more than 60 minutes of content in an hour. I decided to ignore this, but you could find a way to split the streaming data for a more accurate result. For me, and the story I was trying to uncover, it wasn’t worth the additional effort.</p><p class="" style="white-space:pre-wrap;">This version of the worksheet was close to the final result, but I wanted to help make my insights jump off the page. I used 2 techniques to do this. The first was using reference lines. I wanted to highlight my working day in this data. A reference band from 8am to 5pm helps this stand out nicely. I also wanted to make the shift easily identifiable, which you can see by the reference line highlighting the day my son was born. The nice thing about these bands and lines is that they could double as axis markers so I didn’t need to keep the traditional headers. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/07.png" alt="" width="602" height="359" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">The other technique I used was annotations. This meant that I could highlight key parts of the story to guide the viewer through it. I know where the pivotal points are, and why they are there, but other people won’t necessarily. These comments help to add that extra bit of context. </p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/08.png" alt="" width="602" height="359" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">It was now time to pull this into a dashboard. I really wanted to highlight the hours that I most often listen to music. To help with this, the final dashboard has an additional sheet showing the number of days in the last year that I listened to music in each hour of the day. With this added, and a playful title inspired by ChatGPT, the dashboard was complete.</p>
+<figure class="blog-post-figure"><img src="../blog-posts/images/blog021/09.png" alt="" width="602" height="338" loading="lazy" decoding="async" /></figure>
+<p class="" style="white-space:pre-wrap;">The focus here isn’t a deep analysis. It’s an aggregated look at how behaviour changes over time. By mixing in details of separate events, you are able to uncover the reasons behind the shift. I think this is where the power of Tableau comes. Their mission from day one was to help people see and understand their data. This is something that I think this visualisation does really powerfully. </p><p class="" style="white-space:pre-wrap;">It would have been very easy to go off track with this. There is so much detail in the data that I haven’t touched at all. What songs did I listen to the most? What was my favourite podcast? None of these questions were related to the story that I set out to tell, so I haven’t included them here. Maybe that is something I’ll come back to in a future project. </p><p class="" style="white-space:pre-wrap;"><strong>//</strong></p><p class="" style="white-space:pre-wrap;">For now, what story would you tell with your own music streaming data? And what are your favourite techniques for telling a story with data that remains focussed on what you set out to achieve?</p><p class="" style="white-space:pre-wrap;">Take care <strong>//</strong> Chris</p></article>
+        </div>
+      </main>
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <a class="site-footer__logo" href="../index.html" aria-label="Westlake Analytics home">
+            <img class="site-footer__logo-mark" src="../WestlakeAnalytics%20Logo.svg" alt="" width="112" height="112" decoding="async" draggable="false" aria-hidden="true" />
+          </a>
+          <p class="site-footer__text">Chris Westlake | Edinburgh, UK</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
