@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="page-hero-only">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Westlake Analytics — Coming soon</title>
+    <title>Westlake Analytics</title>
     <meta
       name="description"
-      content="Westlake Analytics — new things coming soon. Data visualisation, Tableau, and storytelling from Chris Westlake."
+      content="Chris Westlake writes about data visualisation, Tableau, and storytelling — practical notes from an Iron Viz champion based in Edinburgh."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
         <div class="entry-hero-stack">
           <div class="entry-hero-stack__core">
             <div class="entry-brand">
-              <a class="logo-title logo-title--hero" href="https://www.westlakeanalytics.com/">
+              <a class="logo-title logo-title--hero" href="index.html">
                 <span class="logo-title__text">Westlake Analytics</span>
               </a>
             </div>
@@ -46,18 +46,359 @@
                   >
                 </h1>
               </div>
-
-              <div class="hero-info-banner-wrap">
-                <p class="hero-info-banner" role="status">
-                  <span class="hero-info-banner__icon" aria-hidden="true">i</span>
-                  <span class="hero-info-banner__text">New website coming soon</span>
-                </p>
-              </div>
             </main>
           </div>
+
+          <p class="scroll-hint" id="scroll-hint">Scroll for more</p>
         </div>
       </div>
     </section>
+
+    <section class="viewport-section viewport-section--intro content-below" aria-labelledby="intro-title">
+      <div class="wrap">
+        <h2 class="section-display-title" id="intro-title">Hello, and welcome</h2>
+        <div class="intro">
+          <p>
+            I'm Chris Westlake. I spend most of my working life in data visualisation — lately with a lot of Tableau —
+            and I had the good fortune to win Iron Viz in 2024. I use this space to share what I'm learning as I go:
+            ideas that made a chart click, mistakes that taught me something, and the occasional longer dive when a topic
+            deserves it.
+          </p>
+          <p>
+            If you build dashboards every day, or you're simply curious about how to make numbers easier to read and
+            harder to forget, I'm glad you stopped by. I write in the hope that you might find one tip worth trying on
+            your next viz — or a perspective you want to argue with, which is welcome too.
+          </p>
+          <p>
+            Most posts sit where analysis, design, and storytelling meet. You'll see plenty of Tableau, a fair bit of
+            Iron Viz and competition craft, and always an eye on whether the people looking at your work will actually
+            understand what you meant them to take away.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="viewport-section viewport-section--recognitions section-tint"
+      id="recognitions-section"
+      aria-label="Recognition and awards"
+    >
+      <div class="section-tint__inner">
+        <h2 class="section-display-title">Recognition</h2>
+        <div class="reveal-stack">
+          <article class="reveal-card">
+            <h3 class="reveal-card__title">Tableau Visionary &amp; Ambassador</h3>
+            <p class="reveal-card__text">
+              Selected as a 2026 Tableau Visionary - recognised with a small group who share their mastery, teach, and collaborate to make 
+              Tableau better for all.
+            </p>
+          </article>
+          <article class="reveal-card">
+            <h3 class="reveal-card__title">2024 IronViz Champion</h3>
+            <p class="reveal-card__text">
+              The flagship Tableau competition rewards clear analysis, tight storytelling, and exceptional design under
+              pressure - against some of the strongest data viz practitioners.
+            </p>
+          </article>
+          <article class="reveal-card">
+            <h3 class="reveal-card__title">Information is Beautiful Awards</h3>
+            <p class="reveal-card__text">
+              Honoured to see work shortlisted for the Information is Beautiful Awards - alongside some of the strongest
+              data storytelling and visual journalism in the world.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="viewport-section viewport-section--offerings"
+      id="offerings-section"
+      aria-label="What we offer"
+    >
+      <div class="offerings-shell">
+        <div class="offerings-tabs" role="tablist" aria-label="Offerings">
+          <button
+            type="button"
+            class="offerings-tab is-active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="offerings-panel-0"
+            id="offerings-tab-0"
+            data-offering-index="0"
+          >
+            Blog
+          </button>
+          <button
+            type="button"
+            class="offerings-tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="offerings-panel-1"
+            id="offerings-tab-1"
+            data-offering-index="1"
+          >
+            Feedback
+          </button>
+          <button
+            type="button"
+            class="offerings-tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="offerings-panel-2"
+            id="offerings-tab-2"
+            data-offering-index="2"
+          >
+            Collaborate
+          </button>
+        </div>
+
+        <div class="offerings-panels" id="offerings-panels" aria-live="polite">
+          <article
+            class="offerings-card is-active"
+            id="offerings-panel-0"
+            role="tabpanel"
+            aria-labelledby="offerings-tab-0"
+          >
+            <div class="offerings-card__inner offerings-card__inner--blog">
+              <p class="offerings-card__lede">
+                Recent writing from the blog - Tableau, viz craft, and storytelling.
+              </p>
+              <div class="blog-highlights-layout">
+                <div class="blog-highlights" role="list">
+                  <!-- BLOG-HIGHLIGHTS:START -->
+                  <article class="blog-highlight-card" role="listitem">
+                    <a
+                      class="blog-highlight-card__media"
+                      href="blog-posts/blog023.html"
+                      tabindex="-1"
+                      aria-hidden="true"
+                    >
+                      <img
+                        src="blog-posts/images/blog023/thumb.png"
+                        width="750"
+                        height="750"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                    <h2 class="blog-highlight-card__title">
+                      <a href="blog-posts/blog023.html">Sunburst Charts Four Ways</a>
+                    </h2>
+                    <a class="blog-highlight-card__cta" href="blog-posts/blog023.html">Read more</a>
+                  </article>
+                  <article class="blog-highlight-card" role="listitem">
+                    <a
+                      class="blog-highlight-card__media"
+                      href="blog-posts/blog022.html"
+                      tabindex="-1"
+                      aria-hidden="true"
+                    >
+                      <img
+                        src="blog-posts/images/blog022/thumb.png"
+                        width="750"
+                        height="750"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                    <h2 class="blog-highlight-card__title">
+                      <a href="blog-posts/blog022.html">The Journey to Visionary</a>
+                    </h2>
+                    <a class="blog-highlight-card__cta" href="blog-posts/blog022.html">Read more</a>
+                  </article>
+                  <article class="blog-highlight-card" role="listitem">
+                    <a
+                      class="blog-highlight-card__media"
+                      href="blog-posts/blog021.html"
+                      tabindex="-1"
+                      aria-hidden="true"
+                    >
+                      <img
+                        src="blog-posts/images/blog021/thumb.png"
+                        width="750"
+                        height="750"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                    <h2 class="blog-highlight-card__title">
+                      <a href="blog-posts/blog021.html">Spotify Data Stories</a>
+                    </h2>
+                    <a class="blog-highlight-card__cta" href="blog-posts/blog021.html">Read more</a>
+                  </article>
+                <!-- BLOG-HIGHLIGHTS:END -->
+                </div>
+                <p class="offerings-card__blog-footer">
+                  <a class="blog-highlight-card__cta" href="blog.html">View all blog posts</a>
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="offerings-card is-below" id="offerings-panel-1" role="tabpanel" aria-labelledby="offerings-tab-1">
+            <div class="offerings-card__inner">
+              <p class="offerings-card__text">
+                If you're struggling with the final steps of a Tableau data visualization project, this solution is for 
+                you. Whether you have a calculation that isn't working as expected and you can't determine why, or you need
+                general feedback on your work to confidently present a solution that meets stakeholder requirements and looks
+                polished, we can help you get there.
+                <br><br>
+                Since launching my 1-1 viz help service in 2025, I've taken over 100 bookings and helped dozens of people 
+                get unstuck and elevate their Tableau skills.
+                <br><br>
+                Book a 15 minute session with me to talk through your queries and take your use of Tableau to the next level.
+              </p>
+              <div class="offerings-card__actions">
+                <!-- TODO: replace button with Calendly (or similar) booking link when ready -->
+                <a class="blog-highlight-card__cta" href="viz-help.html">Book a session</a>
+              </div>
+            </div>
+          </article>
+          <article class="offerings-card is-below" id="offerings-panel-2" role="tabpanel" aria-labelledby="offerings-tab-2">
+            <div class="offerings-card__inner offerings-card__inner--blog">
+              <p class="offerings-card__lede">
+                A sample of collaborations — from print to the stage to deep Tableau work. If something here resonates,
+                I would love to hear what you are building.
+              </p>
+              <div class="blog-highlights-layout">
+                <div class="blog-highlights" role="list">
+                  <article class="blog-highlight-card blog-highlight-card--flip" role="listitem" tabindex="0">
+                    <div class="blog-highlight-card__flip">
+                      <div class="blog-highlight-card__flip-face blog-highlight-card__flip-face--front">
+                        <div class="blog-highlight-card__media" aria-hidden="true">
+                          <img
+                            src="images/collaborate/book-series.png"
+                            width="750"
+                            height="750"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                        <h3 class="blog-highlight-card__title">Designing cover art for a book series</h3>
+                      </div>
+                      <div class="blog-highlight-card__flip-face blog-highlight-card__flip-face--back">
+                        <p class="blog-highlight-card__flip-text">
+                          Placeholder: add the series name, genre, publisher constraints, and what you delivered (concept
+                          sketches through final print files). Mention any awards, reprints, or translations you want to
+                          highlight.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="blog-highlight-card blog-highlight-card--flip" role="listitem" tabindex="0">
+                    <div class="blog-highlight-card__flip">
+                      <div class="blog-highlight-card__flip-face blog-highlight-card__flip-face--front">
+                        <div class="blog-highlight-card__media" aria-hidden="true">
+                          <img
+                            src="images/collaborate/speaking.jpg"
+                            width="750"
+                            height="750"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                        <h3 class="blog-highlight-card__title">Keynote speaker and guest lecturer</h3>
+                      </div>
+                      <div class="blog-highlight-card__flip-face blog-highlight-card__flip-face--back">
+                        <p class="blog-highlight-card__flip-text">
+                          Placeholder: add example events, host institutions, typical talk length, and themes (e.g. Iron
+                          Viz craft, data storytelling, Tableau tips). Note whether you prefer keynotes, guest lectures,
+                          or hands-on labs.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="blog-highlight-card blog-highlight-card--flip" role="listitem" tabindex="0">
+                    <div class="blog-highlight-card__flip">
+                      <div class="blog-highlight-card__flip-face blog-highlight-card__flip-face--front">
+                        <div class="blog-highlight-card__media" aria-hidden="true">
+                          <img
+                            src="images/collaborate/consulting.jpg"
+                            width="750"
+                            height="750"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                        <h3 class="blog-highlight-card__title">Tableau-based freelance consultancy</h3>
+                      </div>
+                      <div class="blog-highlight-card__flip-face blog-highlight-card__flip-face--back">
+                        <p class="blog-highlight-card__flip-text">
+                          Placeholder: describe the kinds of builds you take on (e.g. executive dashboards, comp prep,
+                          design systems), typical stack, and how you like to collaborate with in-house teams. Add
+                          engagement length or industries if helpful.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="offerings-card__actions offerings-card__actions--freelance">
+                <a
+                  class="blog-highlight-card__cta offerings-freelance-cta"
+                  href="contact.html"
+                  >Get in touch to explore how we can work together</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <a class="site-footer__logo" href="index.html" aria-label="Westlake Analytics home">
+            <img
+              class="site-footer__logo-mark"
+              src="WestlakeAnalytics%20Logo.svg"
+              alt=""
+              width="112"
+              height="112"
+              decoding="async"
+              draggable="false"
+              aria-hidden="true"
+            />
+          </a>
+          <p class="site-footer__text">Chris Westlake | Edinburgh, UK</p>
+        </div>
+      </footer>
+    </section>
+
+    <header class="site-banner" id="site-banner" aria-label="Site">
+      <div class="site-banner__inner">
+        <div class="site-banner__center">
+          <a class="logo-title" href="index.html">
+            <img
+              class="logo-title__mark"
+              src="WestlakeAnalytics%20Logo.svg"
+              alt=""
+              width="48"
+              height="48"
+              decoding="async"
+              draggable="false"
+              aria-hidden="true"
+            />
+            <span class="logo-title__text">Westlake Analytics</span>
+          </a>
+        </div>
+        <nav class="site-banner__nav" aria-label="Primary">
+          <ul>
+            <li><a class="nav-pill" href="blog.html">Blog</a></li>
+            <li>
+              <a class="nav-pill" href="viz-help.html">1-1 Viz Help</a>
+            </li>
+            <li><a class="nav-pill" href="about.html">About</a></li>
+            <li><a class="nav-pill" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <script src="main.js" defer></script>
   </body>

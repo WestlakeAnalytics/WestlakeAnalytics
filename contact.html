@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="page-sub">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact · Westlake Analytics</title>
+    <meta
+      name="description"
+      content="Get in touch with Chris Westlake — data visualisation, freelance projects, and general enquiries."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-sub">
+    <header class="site-banner" id="site-banner" aria-label="Site">
+      <div class="site-banner__inner">
+        <div class="site-banner__center">
+          <a class="logo-title" href="index.html">
+            <img
+              class="logo-title__mark"
+              src="WestlakeAnalytics%20Logo.svg"
+              alt=""
+              width="48"
+              height="48"
+              decoding="async"
+              draggable="false"
+              aria-hidden="true"
+            />
+            <span class="logo-title__text">Westlake Analytics</span>
+          </a>
+        </div>
+        <nav class="site-banner__nav" aria-label="Primary">
+          <ul>
+            <li><a class="nav-pill" href="blog.html">Blog</a></li>
+            <li><a class="nav-pill" href="viz-help.html">1-1 Viz Help</a></li>
+            <li><a class="nav-pill" href="about.html">About</a></li>
+            <li><a class="nav-pill nav-pill--current" href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-shell">
+      <main class="page-main" id="main">
+        <div class="page-main__inner">
+          <h1 class="section-display-title">Get in Touch</h1>
+          <div class="page-prose">
+            <p>
+              I would love to hear from you! Feel free to drop me a message, and let's chat about all things data
+              visualisation.
+            </p>
+            <p>
+              I also have limited availability for freelance data visualisation projects. Reach out if you have a
+              project I can help you with!
+            </p>
+            <p>
+              Use the contact form below,
+              <a href="mailto:chris@westlakeanalytics.com?subject=Westlake%20Analytics%20%7C%20Contact">email me</a>, or
+              get in touch via social links below.
+            </p>
+          </div>
+
+          <form class="contact-form" id="contact-form" action="#" method="post">
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="contact-name">Name</label>
+              <input class="contact-form__input" type="text" id="contact-name" name="name" required autocomplete="name" />
+            </div>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="contact-email">Email</label>
+              <input
+                class="contact-form__input"
+                type="email"
+                id="contact-email"
+                name="email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="contact-message">Message</label>
+              <textarea class="contact-form__textarea" id="contact-message" name="message" required></textarea>
+            </div>
+            <div class="page-actions">
+              <button type="submit" class="blog-highlight-card__cta">Send message</button>
+            </div>
+          </form>
+
+          <div class="page-social" aria-label="Social links">
+            <a href="https://x.com/westlake_cjw" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+            <a href="https://www.linkedin.com/in/westlakecjw/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <a class="site-footer__logo" href="index.html" aria-label="Westlake Analytics home">
+            <img
+              class="site-footer__logo-mark"
+              src="WestlakeAnalytics%20Logo.svg"
+              alt=""
+              width="112"
+              height="112"
+              decoding="async"
+              draggable="false"
+              aria-hidden="true"
+            />
+          </a>
+          <p class="site-footer__text">Chris Westlake | Edinburgh, UK</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="pages.js" defer></script>
+  </body>
+</html>
