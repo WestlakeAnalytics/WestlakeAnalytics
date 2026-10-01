@@ -182,5 +182,13 @@
     "dateDisplay": "30/04/2026",
     "file": "blog-posts/blog023.html",
     "thumb": "blog-posts/images/blog023/thumb.png"
+  },
+  {
+    "id": "blog024",
+    "title": "Introducing Shorts in Sports",
+    "date": "2026-10-01T00:00:00.000Z",
+    "dateDisplay": "01/10/2026",
+    "file": "blog-posts/blog024.html",
+    "thumb": "blog-posts/images/blog024/thumb.png"
   }
 ]
