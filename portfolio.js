@@ -59,7 +59,7 @@
     {
       title: "Champions of the Champions League",
       image: "Portfolio/Champions League.png",
-      detail: "Data art exploring the Champions of the Champions League",
+      detail: "Early exploration with data art",
       url: "https://public.tableau.com/app/profile/westlake.cjw/viz/ChampionsoftheChampionsLeague/ChampionsoftheChampionsLeague",
     },
     // To add more: { title, image, detail, url }. Use { placeholder: true } for a "Coming soon" tile.
