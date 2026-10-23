@@ -212,6 +212,7 @@ function buildPostHtml({ title, dateStr, bodyHtml }) {
         <nav class="site-banner__nav" aria-label="Primary">
           <ul>
             <li><a class="nav-pill nav-pill--current" href="../blog.html" aria-current="page">Blog</a></li>
+            <li><a class="nav-pill" href="../portfolio.html">Portfolio</a></li>
             <li><a class="nav-pill" href="../viz-help.html">1-1 Viz Help</a></li>
             <li><a class="nav-pill" href="../about.html">About</a></li>
             <li><a class="nav-pill" href="../contact.html">Contact</a></li>
@@ -281,6 +282,7 @@ function buildBlogIndexHtml(postsNewestFirst) {
         <nav class="site-banner__nav" aria-label="Primary">
           <ul>
             <li><a class="nav-pill nav-pill--current" href="blog.html" aria-current="page">Blog</a></li>
+            <li><a class="nav-pill" href="portfolio.html">Portfolio</a></li>
             <li><a class="nav-pill" href="viz-help.html">1-1 Viz Help</a></li>
             <li><a class="nav-pill" href="about.html">About</a></li>
             <li><a class="nav-pill" href="contact.html">Contact</a></li>

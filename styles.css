@@ -1495,6 +1495,180 @@ body.page-sub .site-footer {
   box-shadow: 0 8px 28px rgba(0, 26, 58, 0.08);
 }
 
+/* ---- Portfolio: tessellated hexagon tiles that flip on hover ---- */
+/* Hexagons bleed past the content column to the page edges; clip so there is no sideways scroll. */
+body.page-sub:has(.hex-grid) .page-main {
+  position: relative;
+  overflow: clip;
+}
+
+/* Small filler hexagons cover the whole page behind the content; the work tiles sit on top. */
+.hex-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  --hex-clip: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+body.page-sub:has(.hex-grid) .page-main__inner {
+  padding-top: clamp(1rem, 2.5vw, 1.75rem);
+  padding-bottom: 0;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+body.page-sub:has(.hex-grid) .page-main__inner > .section-lede {
+  margin-bottom: 0;
+}
+
+body.page-sub:has(.hex-grid) .page-main__inner > :not(.hex-grid) {
+  pointer-events: auto;
+}
+
+.hex-grid {
+  position: relative;
+  width: 100%;
+  margin-top: clamp(0.35rem, 1vw, 0.75rem);
+  --hex-w: 180px;
+  --hex-clip: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.hex {
+  position: absolute;
+  display: block;
+  perspective: 900px;
+  text-decoration: none;
+  /* The box is rectangular; only the clipped faces should catch the pointer. */
+  pointer-events: none;
+}
+
+.hex__flip {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hex__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  clip-path: var(--hex-clip);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: auto;
+}
+
+/* Dark blue border: the face is navy and the image is inset by a uniform hexagonal border. */
+.hex__face--front {
+  --hex-border: max(3px, calc(var(--hex-w) * 0.025));
+  background: var(--accent);
+}
+
+.hex__face--front img {
+  position: absolute;
+  top: calc(var(--hex-border) * 1.1547);
+  bottom: calc(var(--hex-border) * 1.1547);
+  left: var(--hex-border);
+  right: var(--hex-border);
+  display: block;
+  width: calc(100% - 2 * var(--hex-border));
+  height: calc(100% - 2 * var(--hex-border) * 1.1547);
+  object-fit: cover;
+  clip-path: var(--hex-clip);
+  background: #fff;
+}
+
+/* Placeholder tile: light panel inside the navy border, with a quiet label. It never flips. */
+.hex--placeholder .hex__flip {
+  transform: none !important;
+}
+
+.hex__placeholder {
+  position: absolute;
+  top: calc(var(--hex-border) * 1.1547);
+  bottom: calc(var(--hex-border) * 1.1547);
+  left: var(--hex-border);
+  right: var(--hex-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: var(--hex-clip);
+  background: color-mix(in srgb, #fff 88%, var(--second-section-bg) 12%);
+  font-size: calc(var(--hex-w) * 0.07);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent) 55%, var(--muted));
+}
+
+.hex__face--back {
+  transform: rotateY(180deg);
+  padding: 0 calc(var(--hex-w) * 0.2);
+  gap: calc(var(--hex-w) * 0.035);
+  text-align: center;
+  background: var(--accent);
+  color: var(--header-text);
+}
+
+.hex__title {
+  font-size: calc(var(--hex-w) * 0.078);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hex__detail {
+  font-size: calc(var(--hex-w) * 0.062);
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hex__cta {
+  margin-top: calc(var(--hex-w) * 0.02);
+  padding: 0.2em 0.9em;
+  font-size: calc(var(--hex-w) * 0.062);
+  font-weight: 600;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Blank filler hexagons: translucent navy, brighten slightly on hover. */
+.hex__face--blank {
+  background: hsla(210.48, 100%, 12.35%, var(--blank-alpha, 0.1));
+  transition: background 0.3s ease;
+}
+
+.hex--blank:hover .hex__face--blank {
+  background: hsla(210.48, 100%, 12.35%, calc(var(--blank-alpha, 0.04) + 0.06));
+}
+
+.hex:hover .hex__flip,
+.hex:focus-visible .hex__flip,
+.hex.is-flipped .hex__flip {
+  transform: rotateY(180deg);
+}
+
+.hex:focus-visible {
+  outline: none;
+}
+
+.hex:focus-visible .hex__face--back {
+  background: var(--accent-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hex__flip {
+    transition-duration: 0.01ms;
+  }
+}
+
 /* ---- Site footer (matches westlakeanalytics.com) ---- */
 .site-footer {
   position: relative;
