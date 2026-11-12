@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Marathon Majors</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&display=swap" rel="stylesheet">
+<style>
+ html,body{margin:0;background:#fff}
+ svg{display:block;width:550px;height:1000px}
+ .t{font-family:'Anton','Impact','Arial Narrow',sans-serif}
+ .s{font-family:'Caveat Brush','Segoe Script','Brush Script MT',cursive}
+ .b{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif}
+</style></head><body>
+<script type="text/plain" id="csv">
+Race,Year,Sex,Winner,Nationality,Time,Notes,Birth_Country,Birth_Country_Source
+Tokyo,2007,Men,Daniel Njenga,Kenya,2:09:45,First Tokyo Marathon,,
+Tokyo,2007,Women,Hitomi Niiya,Japan,2:31:01,,,
+Tokyo,2008,Men,Viktor Röthlin,Switzerland,2:07:23,,,
+Tokyo,2008,Women,Claudia Dreher,Germany,2:35:35,,,
+Tokyo,2009,Men,Salim Kipsang,Kenya,2:10:27,,,
+Tokyo,2009,Women,Mizuho Nasukawa,Japan,2:25:38,,,
+Tokyo,2010,Men,Masakazu Fujiwara,Japan,2:12:19,,,
+Tokyo,2010,Women,Alevtina Biktimirova,Russia,2:34:39,,,
+Tokyo,2011,Men,Hailu Mekonnen,Ethiopia,2:07:35,,,
+Tokyo,2011,Women,Noriko Higuchi,Japan,2:28:49,Original winner Tatyana Aryasova disqualified,,
+Tokyo,2012,Men,Michael Kipyego,Kenya,2:07:37,,,
+Tokyo,2012,Women,Atsede Habtamu,Ethiopia,2:25:28,,,
+Tokyo,2013,Men,Dennis Kimetto,Kenya,2:06:50,,,
+Tokyo,2013,Women,Aberu Kebede,Ethiopia,2:25:34,,,
+Tokyo,2014,Men,Dickson Chumba,Kenya,2:05:42,,,
+Tokyo,2014,Women,Tirfi Tsegaye,Ethiopia,2:22:23,,,
+Tokyo,2015,Men,Endeshaw Negesse,Ethiopia,2:06:00,,,
+Tokyo,2015,Women,Birhane Dibaba,Ethiopia,2:23:15,,,
+Tokyo,2016,Men,Feyisa Lilesa,Ethiopia,2:06:56,,,
+Tokyo,2016,Women,Helah Kiprop,Kenya,2:21:27,,,
+Tokyo,2017,Men,Wilson Kipsang,Kenya,2:03:58,,,
+Tokyo,2017,Women,Sarah Chepchirchir,Kenya,2:19:47,,,
+Tokyo,2018,Men,Dickson Chumba,Kenya,2:05:30,,,
+Tokyo,2018,Women,Birhane Dibaba,Ethiopia,2:19:51,,,
+Tokyo,2019,Men,Birhanu Legese,Ethiopia,2:04:48,,,
+Tokyo,2019,Women,Ruti Aga,Ethiopia,2:20:40,,,
+Tokyo,2020,Men,Birhanu Legese,Ethiopia,2:04:15,Elite-only race due to COVID-19,,
+Tokyo,2020,Women,Lonah Chemtai,Israel,2:17:45,Elite-only race due to COVID-19,,
+Tokyo,2021,Men,Eliud Kipchoge,Kenya,2:02:40,Held March 2022 (postponed),Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+Tokyo,2021,Women,Brigid Kosgei,Kenya,2:16:02,Held March 2022 (postponed),,
+Tokyo,2023,Men,Deso Gelmisa,Ethiopia,2:05:22,,,
+Tokyo,2023,Women,Rosemary Wanjiru,Kenya,2:16:28,,,
+Tokyo,2024,Men,Benson Kipruto,Kenya,2:02:16,,,
+Tokyo,2024,Women,Sutume Kebede,Ethiopia,2:15:55,,,
+Tokyo,2025,Men,Tadese Takele,Ethiopia,2:03:23,,,
+Tokyo,2025,Women,Sutume Kebede,Ethiopia,2:16:31,,,
+Tokyo,2026,Men,Tadese Takele,Ethiopia,2:03:37,Source: World Athletics results,,
+Tokyo,2026,Women,Brigid Kosgei,Kenya,2:14:29,User-supplied,,
+Boston,2000,Men,Elijah Lagat,Kenya,2:09:47,,,
+Boston,2000,Women,Catherine Ndereba,Kenya,2:26:11,,,
+Boston,2001,Men,Lee Bong-ju,South Korea,2:09:43,,,
+Boston,2001,Women,Catherine Ndereba,Kenya,2:23:53,,,
+Boston,2002,Men,Rodgers Rop,Kenya,2:09:02,,,
+Boston,2002,Women,Margaret Okayo,Kenya,2:20:43,,,
+Boston,2003,Men,Robert Kipkoech Cheruiyot,Kenya,2:10:11,,,
+Boston,2003,Women,Svetlana Zakharova,Russia,2:25:19,,,
+Boston,2004,Men,Timothy Cherigat,Kenya,2:10:37,,,
+Boston,2004,Women,Catherine Ndereba,Kenya,2:24:27,,,
+Boston,2005,Men,Hailu Negussie,Ethiopia,2:11:44,,,
+Boston,2005,Women,Catherine Ndereba,Kenya,2:25:12,,,
+Boston,2006,Men,Robert Kipkoech Cheruiyot,Kenya,2:07:14,,,
+Boston,2006,Women,Rita Jeptoo,Kenya,2:23:38,,,
+Boston,2007,Men,Robert Kipkoech Cheruiyot,Kenya,2:14:13,,,
+Boston,2007,Women,Lidiya Grigoryeva,Russia,2:29:18,,,
+Boston,2008,Men,Robert Kipkoech Cheruiyot,Kenya,2:07:45,,,
+Boston,2008,Women,Dire Tune,Ethiopia,2:25:25,,,
+Boston,2009,Men,Deriba Merga,Ethiopia,2:08:42,,,
+Boston,2009,Women,Salina Kosgei,Kenya,2:32:16,,,
+Boston,2010,Men,Robert Kiprono Cheruiyot,Kenya,2:05:52,,,
+Boston,2010,Women,Teyba Erkesso,Ethiopia,2:26:11,,,
+Boston,2011,Men,Geoffrey Mutai,Kenya,2:03:02,Fastest marathon time at the time,,
+Boston,2011,Women,Caroline Kilel,Kenya,2:22:36,,,
+Boston,2012,Men,Wesley Korir,Kenya,2:12:40,,,
+Boston,2012,Women,Sharon Cherop,Kenya,2:31:50,,,
+Boston,2013,Men,Lelisa Desisa,Ethiopia,2:10:22,,,
+Boston,2013,Women,Rita Jeptoo,Kenya,2:26:25,,,
+Boston,2014,Men,Meb Keflezighi,United States,2:08:37,,Eritrea,"Olympedia; Wikipedia; born Asmara, Eritrea"
+Boston,2014,Women,Buzunesh Deba,Ethiopia,2:19:59,Original winner Rita Jeptoo disqualified,,
+Boston,2015,Men,Lelisa Desisa,Ethiopia,2:09:17,,,
+Boston,2015,Women,Caroline Rotich,Kenya,2:24:55,,,
+Boston,2016,Men,Lemi Berhanu Hayle,Ethiopia,2:12:45,,,
+Boston,2016,Women,Atsede Bayisa,Ethiopia,2:29:19,,,
+Boston,2017,Men,Geoffrey Kirui,Kenya,2:09:37,,,
+Boston,2017,Women,Edna Kiplagat,Kenya,2:21:52,,,
+Boston,2018,Men,Yuki Kawauchi,Japan,2:15:58,,,
+Boston,2018,Women,Desiree Linden,United States,2:39:54,,,
+Boston,2019,Men,Lawrence Cherono,Kenya,2:07:57,,,
+Boston,2019,Women,Worknesh Degefa,Ethiopia,2:23:31,,,
+Boston,2020,Men,NO RACE,,,Cancelled due to COVID-19,,
+Boston,2020,Women,NO RACE,,,Cancelled due to COVID-19,,
+Boston,2021,Men,Benson Kipruto,Kenya,2:09:51,Held October,,
+Boston,2021,Women,Edna Kiplagat,Kenya,2:25:09,Held October,,
+Boston,2022,Men,Evans Chebet,Kenya,2:06:51,,,
+Boston,2022,Women,Peres Jepchirchir,Kenya,2:21:01,,,
+Boston,2023,Men,Evans Chebet,Kenya,2:05:54,,,
+Boston,2023,Women,Hellen Obiri,Kenya,2:21:38,,,
+Boston,2024,Men,Sisay Lemma,Ethiopia,2:06:17,,,
+Boston,2024,Women,Hellen Obiri,Kenya,2:22:37,,,
+Boston,2025,Men,John Korir,Kenya,2:04:45,,,
+Boston,2025,Women,Sharon Lokedi,Kenya,2:17:22,Course record,,
+Boston,2026,Men,John Korir,Kenya,2:01:52,Course record; user-supplied time,,
+Boston,2026,Women,Sharon Lokedi,Kenya,2:18:51,,,
+London,2000,Men,António Pinto,Portugal,2:06:36,,,
+London,2000,Women,Tegla Loroupe,Kenya,2:24:33,,,
+London,2001,Men,Abdelkader El Mouaziz,Morocco,2:07:09,,,
+London,2001,Women,Derartu Tulu,Ethiopia,2:23:57,,,
+London,2002,Men,Khalid Khannouchi,United States,2:05:38,World record,Morocco,"Wikipedia; born Meknes, Morocco; US citizen from 2000"
+London,2002,Women,Paula Radcliffe,United Kingdom,2:18:56,,,
+London,2003,Men,Gezahegne Abera,Ethiopia,2:07:56,,,
+London,2003,Women,Paula Radcliffe,United Kingdom,2:15:25,World record (mixed race),,
+London,2004,Men,Evans Rutto,Kenya,2:06:18,,,
+London,2004,Women,Margaret Okayo,Kenya,2:22:35,,,
+London,2005,Men,Martin Lel,Kenya,2:07:35,,,
+London,2005,Women,Paula Radcliffe,United Kingdom,2:17:42,,,
+London,2006,Men,Felix Limo,Kenya,2:06:39,,,
+London,2006,Women,Deena Kastor,United States,2:19:35,,,
+London,2007,Men,Martin Lel,Kenya,2:07:41,,,
+London,2007,Women,Zhou Chunxiu,China,2:20:38,,,
+London,2008,Men,Martin Lel,Kenya,2:05:15,Course record; user-supplied name,,
+London,2008,Women,Irina Mikitenko,Germany,2:24:14,,Kazakhstan,"User-specified: born in Kazakhstan"
+London,2009,Men,Samuel Wanjiru,Kenya,2:05:10,,,
+London,2009,Women,Irina Mikitenko,Germany,2:22:11,User-supplied,Kazakhstan,"User-specified: born in Kazakhstan"
+London,2010,Men,Tsegaye Kebede,Ethiopia,2:05:19,,,
+London,2010,Women,Aselefech Mergia,Ethiopia,2:22:38,Originally third; winners later disqualified,,
+London,2011,Men,Emmanuel Mutai,Kenya,2:04:40,Course record,,
+London,2011,Women,Mary Keitany,Kenya,2:19:19,,,
+London,2012,Men,Wilson Kipsang,Kenya,2:04:44,,,
+London,2012,Women,Mary Keitany,Kenya,2:18:37,User-supplied,,
+London,2013,Men,Tsegaye Kebede,Ethiopia,2:06:04,,,
+London,2013,Women,Priscah Jeptoo,Kenya,2:20:15,,,
+London,2014,Men,Wilson Kipsang,Kenya,2:04:29,Course record,,
+London,2014,Women,Edna Kiplagat,Kenya,2:20:21,,,
+London,2015,Men,Eliud Kipchoge,Kenya,2:04:42,,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+London,2015,Women,Tigist Tufa,Ethiopia,2:23:21,,,
+London,2016,Men,Eliud Kipchoge,Kenya,2:03:05,Course record; name inferred from time (verify),Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+London,2016,Women,Jemima Sumgong,Kenya,2:22:58,,,
+London,2017,Men,Daniel Wanjiru,Kenya,2:05:48,,,
+London,2017,Women,Mary Keitany,Kenya,2:17:01,Women-only world record,,
+London,2018,Men,Eliud Kipchoge,Kenya,2:04:17,,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+London,2018,Women,Vivian Cheruiyot,Kenya,2:18:31,,,
+London,2019,Men,Eliud Kipchoge,Kenya,2:02:37,Course record,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+London,2019,Women,Brigid Kosgei,Kenya,2:18:20,,,
+London,2020,Men,Shura Kitata Tola,Ethiopia,2:05:58,,,
+London,2020,Women,Brigid Kosgei,Kenya,2:18:58,User-supplied,,
+London,2021,Men,Sisay Lemma,Ethiopia,2:04:01,,,
+London,2021,Women,Joyciline Jepkosgei,Kenya,2:17:43,,,
+London,2022,Men,Amos Kipruto,Kenya,2:04:39,,,
+London,2022,Women,Yalemzerf Yehualaw,Ethiopia,2:17:26,,,
+London,2023,Men,Kelvin Kiptum,Kenya,2:01:25,Course record,,
+London,2023,Women,Sifan Hassan,Netherlands,2:18:33,,Ethiopia,"Wikipedia; born Adama, Ethiopia; naturalised Dutch 2013"
+London,2024,Men,Alexander Mutiso,Kenya,2:04:01,,,
+London,2024,Women,Peres Jepchirchir,Kenya,2:16:16,,,
+London,2025,Men,Sabastian Sawe,Kenya,2:02:27,,,
+London,2025,Women,Tigst Assefa,Ethiopia,2:15:50,Women-only world record,,
+London,2026,Men,Sabastian Sawe,Kenya,1:59:30,Verified: men's world record in 2026 race reports,,
+London,2026,Women,Tigst Assefa,Ethiopia,2:15:41,Verified against 2026 race reports,,
+Berlin,2000,Men,Simon Biwott,Kenya,2:07:42,,,
+Berlin,2000,Women,Kazumi Matsuo,Japan,2:26:15,,,
+Berlin,2001,Men,Joseph Ngolepus,Kenya,2:08:47,,,
+Berlin,2001,Women,Naoko Takahashi,Japan,2:19:46,World record,,
+Berlin,2002,Men,Raymond Kipkoech,Kenya,2:06:47,,,
+Berlin,2002,Women,Naoko Takahashi,Japan,2:21:49,,,
+Berlin,2003,Men,Paul Tergat,Kenya,2:04:55,World record,,
+Berlin,2003,Women,Yasuko Hashimoto,Japan,2:26:32,,,
+Berlin,2004,Men,Felix Limo,Kenya,2:06:44,,,
+Berlin,2004,Women,Yoko Shibui,Japan,2:19:41,,,
+Berlin,2005,Men,Philip Manyim,Kenya,2:07:41,,,
+Berlin,2005,Women,Mizuki Noguchi,Japan,2:19:12,,,
+Berlin,2006,Men,Haile Gebrselassie,Ethiopia,2:05:56,,,
+Berlin,2006,Women,Gete Wami,Ethiopia,2:21:34,,,
+Berlin,2007,Men,Haile Gebrselassie,Ethiopia,2:04:26,World record,,
+Berlin,2007,Women,Gete Wami,Ethiopia,2:23:17,,,
+Berlin,2008,Men,Haile Gebrselassie,Ethiopia,2:03:59,World record,,
+Berlin,2008,Women,Irina Mikitenko,Germany,2:19:19,,Kazakhstan,"User-specified: born in Kazakhstan"
+Berlin,2009,Men,Haile Gebrselassie,Ethiopia,2:06:08,,,
+Berlin,2009,Women,Atsede Habtamu,Ethiopia,2:24:47,,,
+Berlin,2010,Men,Patrick Makau Musyoki,Kenya,2:05:08,,,
+Berlin,2010,Women,Aberu Kebede,Ethiopia,2:23:58,,,
+Berlin,2011,Men,Patrick Makau Musyoki,Kenya,2:03:38,World record,,
+Berlin,2011,Women,Florence Kiplagat,Kenya,2:19:44,,,
+Berlin,2012,Men,Geoffrey Mutai,Kenya,2:04:15,,,
+Berlin,2012,Women,Aberu Kebede,Ethiopia,2:20:30,,,
+Berlin,2013,Men,Wilson Kipsang,Kenya,2:03:23,World record,,
+Berlin,2013,Women,Florence Kiplagat,Kenya,2:21:13,,,
+Berlin,2014,Men,Dennis Kimetto,Kenya,2:02:57,World record,,
+Berlin,2014,Women,Tirfi Tsegaye,Ethiopia,2:20:18,,,
+Berlin,2015,Men,Eliud Kipchoge,Kenya,2:04:00,,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+Berlin,2015,Women,Gladys Cherono,Kenya,2:19:25,,,
+Berlin,2016,Men,Kenenisa Bekele,Ethiopia,2:03:03,,,
+Berlin,2016,Women,Aberu Kebede,Ethiopia,2:20:45,,,
+Berlin,2017,Men,Eliud Kipchoge,Kenya,2:03:32,,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+Berlin,2017,Women,Gladys Cherono,Kenya,2:20:23,,,
+Berlin,2018,Men,Eliud Kipchoge,Kenya,2:01:39,World record,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+Berlin,2018,Women,Gladys Cherono,Kenya,2:18:11,,,
+Berlin,2019,Men,Kenenisa Bekele,Ethiopia,2:01:41,,,
+Berlin,2019,Women,Ashete Bekere,Ethiopia,2:20:14,,,
+Berlin,2020,Men,NO RACE,,,Cancelled due to COVID-19,,
+Berlin,2020,Women,NO RACE,,,Cancelled due to COVID-19,,
+Berlin,2021,Men,Guye Adola,Ethiopia,2:05:45,,,
+Berlin,2021,Women,Gotytom Gebreslase,Ethiopia,2:20:09,,,
+Berlin,2022,Men,Eliud Kipchoge,Kenya,2:01:09,World record,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+Berlin,2022,Women,Tigst Assefa,Ethiopia,2:15:37,,,
+Berlin,2023,Men,Eliud Kipchoge,Kenya,2:02:42,,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+Berlin,2023,Women,Tigst Assefa,Ethiopia,2:11:53,World record,,
+Berlin,2024,Men,Milkesa Mengesha,Ethiopia,2:03:17,,,
+Berlin,2024,Women,Tigist Ketema,Ethiopia,2:16:42,,,
+Berlin,2025,Men,Sabastian Sawe,Kenya,2:02:16,,,
+Berlin,2025,Women,Rosemary Wanjiru,Kenya,2:21:05,,,
+Chicago,2000,Men,Khalid Khannouchi,United States,2:07:01,,Morocco,"Wikipedia; born Meknes, Morocco; US citizen from 2000"
+Chicago,2000,Women,Catherine Ndereba,Kenya,2:21:33,,,
+Chicago,2001,Men,Ben Kimondiu,Kenya,2:08:52,,,
+Chicago,2001,Women,Catherine Ndereba,Kenya,2:18:47,World record,,
+Chicago,2002,Men,Khalid Khannouchi,United States,2:05:56,,Morocco,"Wikipedia; born Meknes, Morocco; US citizen from 2000"
+Chicago,2002,Women,Paula Radcliffe,United Kingdom,2:17:18,World record,,
+Chicago,2003,Men,Evans Rutto,Kenya,2:05:50,,,
+Chicago,2003,Women,Svetlana Zakharova,Russia,2:23:07,,,
+Chicago,2004,Men,Evans Rutto,Kenya,2:06:16,,,
+Chicago,2004,Women,Constantina Dita,Romania,2:23:45,,,
+Chicago,2005,Men,Felix Limo,Kenya,2:07:02,,,
+Chicago,2005,Women,Deena Kastor,United States,2:21:25,,,
+Chicago,2006,Men,Robert Cheruiyot,Kenya,2:07:35,,,
+Chicago,2006,Women,Berhane Adere,Ethiopia,2:20:42,,,
+Chicago,2007,Men,Patrick Ivuti,Kenya,2:11:11,,,
+Chicago,2007,Women,Berhane Adere,Ethiopia,2:33:49,,,
+Chicago,2008,Men,Evans Cheruiyot,Kenya,2:06:25,,,
+Chicago,2008,Women,Lidiya Grigoryeva,Russia,2:27:17,,,
+Chicago,2009,Men,Samuel Wanjiru,Kenya,2:05:41,,,
+Chicago,2009,Women,Irina Mikitenko,Germany,2:26:31,,Kazakhstan,"User-specified: born in Kazakhstan"
+Chicago,2010,Men,Samuel Wanjiru,Kenya,2:06:23,,,
+Chicago,2010,Women,Atsede Baysa,Ethiopia,2:23:40,,,
+Chicago,2011,Men,Moses Mosop,Kenya,2:05:37,,,
+Chicago,2011,Women,Ejegayehu Dibaba,Ethiopia,2:22:09,,,
+Chicago,2012,Men,Tsegaye Kebede,Ethiopia,2:04:38,,,
+Chicago,2012,Women,Atsede Baysa,Ethiopia,2:22:03,,,
+Chicago,2013,Men,Dennis Kimetto,Kenya,2:03:45,,,
+Chicago,2013,Women,Rita Jeptoo,Kenya,2:19:57,Later disqualified for doping (2014 result),,
+Chicago,2014,Men,Eliud Kipchoge,Kenya,2:04:11,,Kenya,"Multiple bios: born Kapsisiywa, Nandi County, Kenya"
+Chicago,2014,Women,Mare Dibaba,Ethiopia,2:25:37,,,
+Chicago,2015,Men,Dickson Chumba,Kenya,2:09:25,,,
+Chicago,2015,Women,Florence Kiplagat,Kenya,2:23:33,,,
+Chicago,2016,Men,Abel Kirui,Kenya,2:11:23,,,
+Chicago,2016,Women,Florence Kiplagat,Kenya,2:21:32,,,
+Chicago,2017,Men,Galen Rupp,United States,2:09:20,,,
+Chicago,2017,Women,Tirunesh Dibaba,Ethiopia,2:18:31,,,
+Chicago,2018,Men,Mo Farah,United Kingdom,2:05:11,,Somalia,"Britannica; usually given as Mogadishu, Somalia, but he later said he was born in Somaliland (disputed)"
+Chicago,2018,Women,Brigid Kosgei,Kenya,2:18:35,,,
+Chicago,2019,Men,Lawrence Cherono,Kenya,2:05:45,,,
+Chicago,2019,Women,Brigid Kosgei,Kenya,2:14:04,World record,,
+Chicago,2020,Men,NO RACE,,,Cancelled due to COVID-19,,
+Chicago,2020,Women,NO RACE,,,Cancelled due to COVID-19,,
+Chicago,2021,Men,Seifu Tura,Ethiopia,2:06:12,,,
+Chicago,2021,Women,Ruth Chepngetich,Kenya,2:22:31,,,
+Chicago,2022,Men,Benson Kipruto,Kenya,2:04:24,,,
+Chicago,2022,Women,Ruth Chepngetich,Kenya,2:14:18,,,
+Chicago,2023,Men,Kelvin Kiptum,Kenya,2:00:35,World record,,
+Chicago,2023,Women,Sifan Hassan,Netherlands,2:13:44,,Ethiopia,"Wikipedia; born Adama, Ethiopia; naturalised Dutch 2013"
+Chicago,2024,Men,John Korir,Kenya,2:02:43,,,
+Chicago,2024,Women,Ruth Chepngetich,Kenya,2:09:56,World record,,
+Chicago,2025,Men,Jacob Kiplimo,Uganda,2:02:23,Kept per user,,
+Chicago,2025,Women,Hawi Feysa,Ethiopia,2:14:56,Kept per user,,
+New York City,2000,Men,Abdelkader El Mouaziz,Morocco,2:10:09,,,
+New York City,2000,Women,Lyudmila Petrova,Russia,2:25:45,,,
+New York City,2001,Men,Tesfaye Jifar,Ethiopia,2:07:43,,,
+New York City,2001,Women,Margaret Okayo,Kenya,2:24:21,,,
+New York City,2002,Men,Rodgers Rop,Kenya,2:08:07,,,
+New York City,2002,Women,Joyce Chepchumba,Kenya,2:25:56,,,
+New York City,2003,Men,Martin Lel,Kenya,2:10:30,,,
+New York City,2003,Women,Margaret Okayo,Kenya,2:22:31,,,
+New York City,2004,Men,Hendrick Ramaala,South Africa,2:09:28,,,
+New York City,2004,Women,Paula Radcliffe,United Kingdom,2:23:10,,,
+New York City,2005,Men,Paul Tergat,Kenya,2:09:30,,,
+New York City,2005,Women,Jelena Prokopcuka,Latvia,2:24:41,,,
+New York City,2006,Men,Marilson Gomes dos Santos,Brazil,2:09:58,,,
+New York City,2006,Women,Jelena Prokopcuka,Latvia,2:25:05,,,
+New York City,2007,Men,Martin Lel,Kenya,2:09:04,,,
+New York City,2007,Women,Paula Radcliffe,United Kingdom,2:23:09,,,
+New York City,2008,Men,Marilson Gomes dos Santos,Brazil,2:08:43,,,
+New York City,2008,Women,Paula Radcliffe,United Kingdom,2:23:56,,,
+New York City,2009,Men,Meb Keflezighi,United States,2:09:15,,Eritrea,"Olympedia; Wikipedia; born Asmara, Eritrea"
+New York City,2009,Women,Derartu Tulu,Ethiopia,2:28:52,,,
+New York City,2010,Men,Gebregziabher Gebremariam,Ethiopia,2:08:14,,,
+New York City,2010,Women,Edna Kiplagat,Kenya,2:28:20,,,
+New York City,2011,Men,Geoffrey Mutai,Kenya,2:05:06,Course record,,
+New York City,2011,Women,Firehiwot Dado,Ethiopia,2:23:15,,,
+New York City,2012,Men,NO RACE,,,Cancelled due to Hurricane Sandy,,
+New York City,2012,Women,NO RACE,,,Cancelled due to Hurricane Sandy,,
+New York City,2013,Men,Geoffrey Mutai,Kenya,2:08:24,,,
+New York City,2013,Women,Priscah Jeptoo,Kenya,2:25:07,,,
+New York City,2014,Men,Wilson Kipsang,Kenya,2:10:59,,,
+New York City,2014,Women,Mary Keitany,Kenya,2:25:07,,,
+New York City,2015,Men,Stanley Biwott,Kenya,2:10:34,,,
+New York City,2015,Women,Mary Keitany,Kenya,2:24:25,,,
+New York City,2016,Men,Ghirmay Ghebreslassie,Eritrea,2:07:51,,Eritrea,"Wikipedia; born Kisadeka, Eritrea"
+New York City,2016,Women,Mary Keitany,Kenya,2:24:26,,,
+New York City,2017,Men,Geoffrey Kamworor,Kenya,2:10:53,,,
+New York City,2017,Women,Shalane Flanagan,United States,2:26:53,,,
+New York City,2018,Men,Lelisa Desisa,Ethiopia,2:05:59,,,
+New York City,2018,Women,Mary Keitany,Kenya,2:22:48,,,
+New York City,2019,Men,Geoffrey Kamworor,Kenya,2:08:13,,,
+New York City,2019,Women,Joyciline Jepkosgei,Kenya,2:22:38,,,
+New York City,2020,Men,Kevin Quinn,United Kingdom,2:23:48,Virtual event due to COVID-19,,"Birthplace not found; World Athletics gives GB, born 24 Jul 1979"
+New York City,2020,Women,Stephanie Bruce,United States,2:35:28,Virtual event due to COVID-19,,
+New York City,2021,Men,Albert Korir,Kenya,2:08:22,,,
+New York City,2021,Women,Peres Jepchirchir,Kenya,2:22:39,,,
+New York City,2022,Men,Evans Chebet,Kenya,2:08:41,,,
+New York City,2022,Women,Sharon Lokedi,Kenya,2:23:23,,,
+New York City,2023,Men,Tamirat Tola,Ethiopia,2:04:58,Course record,,
+New York City,2023,Women,Hellen Obiri,Kenya,2:27:23,,,
+New York City,2024,Men,Abdi Nageeye,Netherlands,2:07:39,,Somalia,"Wikipedia; World Athletics; born Mogadishu, Somalia (one source gives Dharwanaaje); naturalised Dutch"
+New York City,2024,Women,Sheila Chepkirui,Kenya,2:24:35,,,
+New York City,2025,Men,Benson Kipruto,Kenya,2:08:09,,,
+New York City,2025,Women,Hellen Obiri,Kenya,2:19:51,Course record,,
+Berlin,2026,Men,Guye Adola,Ethiopia,2:02:50,Verified against 2026 race reports (earlier entry was the 2025 result),,
+Berlin,2026,Women,Tigst Assefa,Ethiopia,2:11:04,Verified against 2026 race reports; course record (earlier entry was the 2025 result),,
+Chicago,2026,Men,Amos Kipruto,Kenya,2:01:09,Verified against 2026 race reports,,
+Chicago,2026,Women,Hawi Feysa,Ethiopia,2:13:33,Verified against 2026 race reports,,
+New York City,2026,Men,Andreas Almgren,Sweden,2:06:01,User-supplied,,
+New York City,2026,Women,Sheila Chepkirui,Kenya,2:24:36,User-supplied,,
+
+</script>
+<svg id="v" viewBox="0 0 550 1000" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+const NAVY='#0B2A5B', ORANGE='#F26A1B', INK='#3D4657', SOFT='#8A93A3';
+const COL={Europe:ORANGE,Africa:'#CDD2DA','Asia':'#AEB5C0','North America':'#8E96A5','South America':'#6C7584'};
+function parse(t){const rows=[];let r=[],f='',q=false;
+ for(let i=0;i<t.length;i++){const c=t[i];
+  if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
+  else if(c=='"')q=true; else if(c==','){r.push(f);f=''}
+  else if(c=='\n'){r.push(f);rows.push(r);r=[];f=''} else if(c!='\r')f+=c}
+ if(f||r.length){r.push(f);rows.push(r)} return rows}
+const [hdr,...body]=parse(document.getElementById('csv').textContent.trim());
+const data=body.map(r=>Object.fromEntries(hdr.map((h,i)=>[h,r[i]])));
+// continent of BIRTH country; blank birth country falls back to nationality
+const CONT={Kenya:'Africa',Ethiopia:'Africa',Eritrea:'Africa',Morocco:'Africa',Somalia:'Africa',Uganda:'Africa','South Africa':'Africa',
+ Japan:'Asia','South Korea':'Asia',China:'Asia',Israel:'Asia','United States':'North America',Brazil:'South America',
+ Kazakhstan:'Asia',Switzerland:'Europe',Portugal:'Europe',Sweden:'Europe','United Kingdom':'Europe',Netherlands:'Europe',Germany:'Europe',Russia:'Asia',Latvia:'Europe',Romania:'Europe'};
+const ORDER=['Tokyo','Boston','London','Berlin','Chicago','New York City'];
+const all=data.filter(d=>d.Winner!=='NO RACE').map(d=>{
+ d.year=+d.Year; d.birth=d.Birth_Country||d.Nationality; d.cont=CONT[d.birth];
+ d.virtual=/virtual/i.test(d.Notes); d.ord=ORDER.indexOf(d.Race);
+ if(!d.cont) console.error('No continent for',d.birth); return d});
+const men=all.filter(d=>!d.virtual);  // any winner, men or women (virtual 2020 NYC excluded)
+const euro=men.filter(d=>d.cont==='Europe').sort((a,b)=>a.year-b.year||a.ord-b.ord);
+const last=euro[euro.length-1], prev=euro[euro.length-2];
+const raceCount=men.filter(d=>(d.year>prev.year||(d.year==prev.year&&d.ord>prev.ord))&&d!==last&&!(d.year==last.year&&d.ord==last.ord)).length;
+// race dates (not in the CSV): NYC 2008 = 2 Nov 2008, NYC 2026 = 1 Nov 2026
+const DAYS=Math.round((Date.UTC(2026,10,1)-Date.UTC(2008,10,2))/864e5);
+const wEuro=all.filter(d=>d.Sex==='Women'&&d.cont==='Europe'&&!d.virtual&&d.year>prev.year).length;
+window.STORY={prev:prev.Winner+' '+prev.Race+' '+prev.year,last:last.Winner,raceCount,womenEuropeanWinsSincePrev:wEuro,
+ menEuro:euro.map(d=>d.Winner+' '+d.Race+' '+d.year),total:all.length,
+ byCont:Object.fromEntries(Object.keys(COL).map(b=>[b,all.filter(d=>d.cont===b).length]))};
+// layout
+const Y0=2000,Y1=2026,RH=24,TOP=293,X0=44,CWID=34,CG=2,COLW=CWID*2+CG+10;
+const rowY=y=>TOP+(y-Y0)*RH, colX=i=>X0+i*COLW;
+const svg=document.getElementById('v');let h='';const A=s=>h+=s;
+A(`<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA24A"/><stop offset="1" stop-color="#E4570F"/></linearGradient></defs>`);
+A(`<image href="data:image/png;base64,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" x="0" y="9" width="550" height="100"/>`);
+A(`<text class="b" text-anchor="middle" font-size="12.5" fill="${INK}"><tspan x="275" y="137">In 2026, Sweden's Andreas Almgren won the New York City Marathon,</tspan><tspan x="275" y="154">the first European-born major winner since ${prev.Winner} won there in ${prev.year}.</tspan><tspan x="275" y="171">In between, ${raceCount} men's and women's majors went to runners born elsewhere.</tspan></text>`);
+// legend: one bar across the width, filled by each region's share of all wins
+// one bar per region, each filled by its share of all winners (same scale, so they compare directly)
+const BWD=70,BHT=10,LY0=207,TOT=STORY.total;
+[['Europe','Europe'],['Africa','Africa'],['Asia','Asia'],['North America','N. America'],['South America','S. America']].forEach(([k,l],i)=>{
+ const cx=275+(i-2)*COLW, n=STORY.byCont[k], w=Math.max(n/TOT*BWD,3), eu=k==='Europe';
+ A(`<text class="b" x="${cx}" y="${LY0}" text-anchor="middle" font-size="11" font-weight="${eu?700:400}" fill="${eu?ORANGE:INK}">${l}</text>`);
+ A(`<rect x="${cx-BWD/2}" y="${LY0+7}" width="${BWD}" height="${BHT}" rx="5" fill="#F0F2F5"/>`);
+ A(`<rect x="${cx-BWD/2}" y="${LY0+7}" width="${w}" height="${BHT}" rx="5" fill="${COL[k]||NAVY}"/>`);
+ A(`<text class="b" x="${cx}" y="${LY0+31}" text-anchor="middle" font-size="12" font-weight="700" fill="${eu?ORANGE:INK}">${n}</text>`)});
+// column headers
+ORDER.forEach((r,i)=>{const nm=r==='New York City'?'New York':r;
+ A(`<text class="b" x="${colX(i)+35}" y="${TOP-17}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${NAVY}">${nm}</text>`);
+ A(`<text class="b" x="${colX(i)+35-11}" y="${TOP-5}" text-anchor="middle" font-size="9" font-style="italic" fill="${SOFT}">M</text>`);
+ A(`<text class="b" x="${colX(i)+35+11}" y="${TOP-5}" text-anchor="middle" font-size="9" font-style="italic" fill="${SOFT}">W</text>`)});
+// year labels
+for(let y=Y0;y<=Y1;y++){const big=y%10===0;
+ A(`<text class="b" x="${X0-8}" y="${rowY(y)+RH/2+3.5}" text-anchor="end" font-size="${big?13:10}" font-style="italic" font-weight="${big?700:400}" fill="${big?INK:SOFT}">${y}</text>`)}
+// squares
+const pos=d=>[colX(d.ord)+35+(d.Sex==='Women'?11:-11), rowY(d.year)+RH/2];
+// faint spine per major
+ORDER.forEach((r,i)=>A(`<line x1="${colX(i)+35}" x2="${colX(i)+35}" y1="${TOP}" y2="${TOP+(Y1-Y0+1)*RH-6}" stroke="#E6E9EE" stroke-width="1"/>`));
+// dots
+all.forEach(d=>{
+ const [x,y]=pos(d), c=COL[d.cont], eu=d.cont==='Europe';
+ const tip=`${d.Race} Marathon | ${d.year}${d.virtual?' (virtual)':''}\n${d.Winner}\n${d.Time}`;
+ if(d.virtual) A(`<circle cx="${x}" cy="${y}" r="${eu?6:4.5}" fill="#fff" stroke="${c}" stroke-width="1.5" stroke-dasharray="2 2"><title>${tip}</title></circle>`);
+ else if(eu) A(`<circle cx="${x}" cy="${y}" r="11" fill="${ORANGE}" opacity=".16"/><circle cx="${x}" cy="${y}" r="6.5" fill="${ORANGE}"><title>${tip}</title></circle>`);
+ else A(`<circle cx="${x}" cy="${y}" r="4.3" fill="${c}"><title>${tip}</title></circle>`);
+});
+A(`<text class="b" x="275" y="${TOP+(Y1-Y0+1)*RH+16}" text-anchor="middle" font-size="9" fill="${SOFT}" font-style="italic">One dot = one winner, coloured by birth continent (nationality used where birth country is unknown).</text>`);
+A(`<text class="b" x="275" y="${TOP+(Y1-Y0+1)*RH+28}" text-anchor="middle" font-size="9" fill="${SOFT}" font-style="italic">Dashed = virtual 2020 NYC (not counted). Days: NYC 2 Nov 2008 to 1 Nov 2026. Tokyo from 2007.</text>`);
+A(`<text class="b" x="275" y="997" text-anchor="middle" font-size="12" fill="${NAVY}">A Shorts in Sports Visualisation | Chris Westlake | World Marathon Majors</text>`);
+svg.innerHTML=h;
+</script></body></html>
