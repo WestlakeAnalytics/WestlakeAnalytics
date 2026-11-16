@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>73 WINTERS – Wales v New Zealand, 1905–2026</title>
+<meta name="description" content="Every Test between Wales and New Zealand since 1905, as daffodils and silver ferns.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rubik:wght@900&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}
+html,body{margin:0;background:#0b1a12;color:#f4efd8;font-family:Georgia,'Times New Roman',serif}
+html{background:radial-gradient(ellipse at 50% 30%,#15381f 0%,#0b1a12 75%) fixed #0b1a12}
+body{min-height:100vh;display:flex;justify-content:center;align-items:flex-start;background:transparent}
+/* A4 sheet: 210 x 297 mm (794 x 1123 px at 96 dpi) */
+.sheet{width:794px;height:1123px;box-sizing:border-box;padding:34px 18px 0;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+@media print{
+  html{background:#0b1a12}
+  body{display:block;min-height:0}
+  .sheet{width:210mm;height:297mm;padding:34px 18px 0}
+  #tip{display:none}
+}
+h1{font-family:'Rubik','Inter',system-ui,sans-serif;font-weight:900;font-size:clamp(40px,13.2vw,104px);letter-spacing:-.01em;line-height:1;margin:0;text-align:center;color:#f4efd8;text-shadow:0 0 30px rgba(255,210,31,.25)}
+.tr{font-family:'Indie Flower','TeX Gyre Chorus',cursive;color:#ffd21f;font-size:clamp(20px,5vw,32px);margin:-4px 0 12px;text-align:center}
+p.sub{color:#8fa597;text-align:center;font-size:clamp(12px,3.4vw,14px);line-height:1.5;margin:0 0 6px;font-style:italic}
+
+/* Chart */
+svg{width:97.7%;flex:1 1 auto;min-height:0;display:block;margin-top:-60px}
+#v text{font-family:Inter,system-ui,sans-serif}
+#v text.yr{font-family:Georgia,'Times New Roman',serif;font-size:12.5px;fill:#c9d3cc}
+#v .won text.yr{font-size:15px;font-weight:700;fill:#ffd21f}
+#v text.sc{font-size:11px;fill:#a9b9ae}
+#v text.ct{font-size:9.5px;fill:#7d9585;letter-spacing:.04em}
+#v text.tag{font-size:9.5px;fill:#ffd21f;letter-spacing:.12em}
+#v g.m{cursor:default}
+#v g.m:focus{outline:none}
+#v g.m:hover text.yr,#v g.m:focus-visible text.yr{fill:#ffd21f;text-decoration:underline}
+#v g.m:focus-visible text.yr{text-decoration:underline}
+
+/* Glassy tooltip: page background colour at 75% opacity */
+#tip{
+  position:fixed;left:0;top:0;z-index:10;pointer-events:none;
+  opacity:0;transition:opacity .15s ease;
+  background:rgba(11,26,18,.3);
+  backdrop-filter:blur(15px) saturate(1.3);
+  -webkit-backdrop-filter:blur(15px) saturate(1.3);
+  border:1px solid rgba(255,210,31,.22);
+  border-radius:10px;
+  padding:12px 14px;
+  min-width:200px;max-width:260px;box-sizing:border-box;
+  box-shadow:0 12px 32px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06);
+  font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;color:#c9d3cc;
+}
+#tip.on{opacity:1}
+#tip strong{display:block;font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:18px;color:#f4efd8;margin-bottom:2px}
+#tip .score{color:#f4efd8}
+#tip .win{color:#ffd21f}
+#tip .muted{color:#8fa597;font-style:italic}
+#tip .note{display:block;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#ffd21f;letter-spacing:.04em}
+
+.foot{font-family:Inter,system-ui,sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8fa597;margin-top:10px;line-height:1.5;text-align:center}
+</style></head><body>
+<div class="sheet">
+<h1>73 WINTERS</h1>
+<div class="tr">until the daffodil bloomed again</div>
+<p class="sub">A daffodil grows with every Welsh point.<br>A silver fern grows with every Kiwi one.<br>34 defeats in a row, then 14 November 2026.</p>
+<div class="foot" style="margin-top:22px;margin-bottom:0">Home side on the left · At neutral venues, the winner on the left<br>Hover a match for details</div>
+
+<svg id="v" viewBox="0 0 800 912" preserveAspectRatio="xMidYMin meet" role="img" aria-label="Chart of every Wales v New Zealand Test since 1905"></svg>
+
+
+<p class="sub" style="margin:auto 0 0;line-height:1">A data visualisation by Chris Westlake</p>
+</div>
+<div id="tip" role="tooltip" aria-hidden="true"></div>
+
+<script>
+// [year, Wales, NZ, home (W=Wales, N=NZ, X=neutral), city]
+const G=[[1905,3,0,'W','Cardiff'],[1924,0,19,'W','Swansea'],[1935,13,12,'W','Cardiff'],[1953,13,8,'W','Cardiff'],[1963,0,6,'W','Cardiff'],[1967,6,13,'W','Cardiff'],[1969,0,19,'N','Christchurch'],[1969,12,33,'N','Auckland'],[1972,16,19,'W','Cardiff'],[1978,12,13,'W','Cardiff'],[1980,3,23,'W','Cardiff'],[1987,6,49,'X','Brisbane'],[1988,3,52,'N','Christchurch'],[1988,9,54,'N','Auckland'],[1989,9,34,'W','Cardiff'],[1995,9,34,'X','Johannesburg'],[1997,7,42,'W','London'],[2002,17,43,'W','Cardiff'],[2003,3,55,'N','Hamilton'],[2003,37,53,'X','Sydney'],[2004,25,26,'W','Cardiff'],[2005,3,41,'W','Cardiff'],[2006,10,45,'W','Cardiff'],[2008,9,29,'W','Cardiff'],[2009,12,19,'W','Cardiff'],[2010,9,42,'N','Dunedin'],[2010,10,29,'N','Hamilton'],[2010,25,37,'W','Cardiff'],[2012,10,33,'W','Cardiff'],[2014,16,34,'W','Cardiff'],[2016,21,39,'N','Auckland'],[2016,22,36,'N','Wellington'],[2016,6,46,'N','Dunedin'],[2017,18,33,'W','Cardiff'],[2019,17,40,'X','Tokyo'],[2021,16,54,'W','Cardiff'],[2022,23,55,'W','Cardiff'],[2025,26,52,'W','Cardiff'],[2026,35,28,'W','Cardiff']];
+
+const K=2, rad=Math.PI/180, f=n=>n.toFixed(1);
+const cols=8, cw=100, R=180;
+const DEFS=`<defs><linearGradient id="wg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff9d00"/><stop offset="1" stop-color="#fff3a0"/></linearGradient>
+<filter id="gl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>`;
+
+const svg=document.getElementById('v');
+const tip=document.getElementById('tip');
+
+function fern(L,op){
+ const P0=[0,0],P1=[-9,-L*.5],P2=[2,-L];
+ const B=t=>[(1-t)*(1-t)*P0[0]+2*(1-t)*t*P1[0]+t*t*P2[0],(1-t)*(1-t)*P0[1]+2*(1-t)*t*P1[1]+t*t*P2[1]];
+ const T=t=>[2*(1-t)*(P1[0]-P0[0])+2*t*(P2[0]-P1[0]),2*(1-t)*(P1[1]-P0[1])+2*t*(P2[1]-P1[1])];
+ let s=`<path d="M0,0 Q${P1[0]},${f(P1[1])} ${P2[0]},${f(P2[1])}" fill="none" stroke="#dfe9ee" stroke-width="1.4" stroke-opacity="${op}"/>`;
+ const n=Math.max(2,Math.floor(L/4.6));
+ for(let k=1;k<=n;k++){
+   const t=.04+.94*k/n, p=B(t), d=T(t), th=Math.atan2(d[1],d[0]), ll=2.5+12*Math.pow(1-t,.8);
+   for(const sd of [-1,1]){
+     const a=th+sd*62*rad;
+     s+=`<line x1="${f(p[0])}" y1="${f(p[1])}" x2="${f(p[0]+ll*Math.cos(a))}" y2="${f(p[1]+ll*Math.sin(a))}" stroke="#e8eef1" stroke-width="1.5" stroke-linecap="round" stroke-opacity="${op}"/>`;
+   }
+ }
+ return s;
+}
+
+function daff(W,win){
+ const pl=6+.45*W, w=pl*.42, H=8+K*W, hy=-(H-pl);
+ let s=`<path d="M0,0 Q-6,${f(hy*.5)} 0,${f(hy)}" fill="none" stroke="#5fae6b" stroke-width="1.8" stroke-opacity=".85"/><g transform="translate(0,${f(hy)})" ${win?'filter="url(#gl)"':''}>`;
+ for(let k=0;k<6;k++)
+   s+=`<path transform="rotate(${k*60})" d="M0,0 C${f(w)},${f(-pl*.3)} ${f(w*.8)},${f(-pl*.85)} 0,${f(-pl)} C${f(-w*.8)},${f(-pl*.85)} ${f(-w)},${f(-pl*.3)} 0,0Z" fill="url(#wg)" fill-opacity="${win?.95:.85}" style="mix-blend-mode:screen"/>`;
+ s+=`<circle r="${f(pl*.38)}" fill="#ffb300" stroke="#fff3a0" stroke-width="1"/><circle r="${f(pl*.2)}" fill="#c25a00"/></g>`;
+ return s;
+}
+
+function outcome(g){
+ const [y,W,N,h,city]=g, win=W>N, diff=Math.abs(W-N);
+ const winner=W>N?'Wales':N>W?'New Zealand':null;
+ const home=h==='W'?'Wales':h==='N'?'New Zealand':'Neutral venue';
+ return {y,W,N,h,city,win,diff,winner,home};
+}
+
+function draw(){
+ let s=DEFS;
+ G.forEach((g,i)=>{
+   const o=outcome(g), {y,W,N,h,city,win}=o;
+   const r=Math.floor(i/cols), c=i%cols, off=r===4?cw/2:0;
+   const bx=off+c*cw+cw/2, by=r*R+128;
+   const walesLeft=h==='W'||(h==='X'&&win);
+   const fernEl=fern(8+K*N,win?.6:.95), daffEl=daff(W,win);
+   const L=walesLeft?daffEl:fernEl, Rt=walesLeft?fernEl:daffEl;
+   const sl=walesLeft?W:N, sr=walesLeft?N:W;
+   const tag=y===1953?'LAST WIN':y===2026?'73 YEARS ON':'';
+   s+=`<g class="m${win?' won':''}" data-i="${i}" tabindex="0" role="img" aria-label="${y}, ${city}: Wales ${W}, New Zealand ${N}" transform="translate(${f(bx)},${by})">`;
+   s+=`<rect x="-50" y="-125" width="100" height="190" fill="transparent"/>`;
+   s+=`<g transform="translate(-16,0) rotate(13)">${L}</g><g transform="translate(16,0) scale(-1,1) rotate(13)">${Rt}</g>`;
+   s+=`<text class="yr" y="19" text-anchor="middle">${y}</text>`;
+   s+=`<text class="sc" y="32" text-anchor="middle">${sl}–${sr}</text>`;
+   s+=`<text class="ct" y="44" text-anchor="middle">${city}</text>`;
+   if(tag) s+=`<text class="tag" y="57" text-anchor="middle">${tag}</text>`;
+   s+=`</g>`;
+ });
+ svg.innerHTML=s;
+}
+
+function tipHTML(idx){
+ const o=outcome(G[idx]);
+ const res=o.winner
+   ? `<span class="win">${o.winner} won by ${o.diff} point${o.diff===1?'':'s'}</span>`
+   : 'Drawn';
+ const home=o.h==='X'?'Neutral venue':`Home: ${o.home}`;
+ return `<strong>${o.y} · ${o.city}</strong>
+   <div class="score">Wales ${o.W}–${o.N} New Zealand</div>
+   <div>${res}</div>
+   <span class="muted">${home}</span>
+   ${o.y===1953?'<span class="note">LAST WELSH WIN BEFORE 2026</span>':''}
+   ${o.y===2026?'<span class="note">73 YEARS ON</span>':''}`;
+}
+
+function showTip(idx, x, y){
+ tip.innerHTML=tipHTML(idx);
+ tip.classList.add('on');
+ tip.setAttribute('aria-hidden','false');
+ // position, then clamp inside the viewport
+ const pad=12, w=tip.offsetWidth, h=tip.offsetHeight;
+ let left=x+18, top=y+18;
+ if(left+w+pad>window.innerWidth) left=x-w-18;
+ if(top+h+pad>window.innerHeight) top=y-h-18;
+ left=Math.max(pad,Math.min(left,window.innerWidth-w-pad));
+ top=Math.max(pad,Math.min(top,window.innerHeight-h-pad));
+ tip.style.transform=`translate(${Math.round(left)}px,${Math.round(top)}px)`;
+}
+
+function hideTip(){
+ tip.classList.remove('on');
+ tip.setAttribute('aria-hidden','true');
+}
+
+// Pointer: follow the cursor while over a match
+svg.addEventListener('pointermove', e=>{
+ const g=e.target.closest('g.m');
+ if(g) showTip(+g.dataset.i, e.clientX, e.clientY);
+ else hideTip();
+});
+svg.addEventListener('pointerleave', hideTip);
+
+// Keyboard focus: show the tooltip beside the focused match
+svg.addEventListener('focusin', e=>{
+ const g=e.target.closest('g.m'); if(!g) return;
+ const r=g.getBoundingClientRect();
+ showTip(+g.dataset.i, r.right, r.top);
+});
+svg.addEventListener('focusout', hideTip);
+
+// Hide on scroll so it doesn't drift away from its match
+window.addEventListener('scroll', hideTip, {passive:true});
+
+draw();
+</script></body></html>
